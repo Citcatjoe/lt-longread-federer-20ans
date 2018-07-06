@@ -95,30 +95,36 @@ hr { background: $red-lt-darker; height: 4px !important; width: 150px; border-ra
 
 h1
 {
-    font-size: 80px;
-    line-height: 90px;
+    font-size: 90px;
+    line-height: 100px;
     color: #fff;
     //font-family: $font1; 
-    font-family: $font1;
-    //text-transform: uppercase;
-    font-weight: 400;
-    text-align: center;
+    font-family: $font3;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-style: italic;
+    //pigeon text-align: center;
     -webkit-font-smoothing: antialiased; 
     -moz-osx-font-smoothing: grayscale;
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1005px;
-    //text-shadow: rgba(0, 0, 0, 0.3) 0 1px 8px, rgba(0, 0, 0, 0.3) 0px 0px 1px;
+    //pigeon max-width: 1100px;
+    text-shadow: rgba(0, 0, 0, 0.3) 0 1px 8px, rgba(0, 0, 0, 0.3) 0px 0px 1px;
 
-     @include breakpoint(sm) { 
-        font-size:60px;
-        line-height: 70px;
+     @include breakpoint(md) { 
+        font-size:75px;
+        line-height: 85px;
     }
 
+    //  @include breakpoint(sm) { 
+    //     font-size:90px;
+    //     line-height: 100px;
+    // }
+
     @include breakpoint(xs) { 
-        font-size:40px;
-        line-height: 47px;
+        font-size:50px;
+        line-height: 57px;
         text-align: center;
 
         br 
@@ -162,13 +168,14 @@ h2
     line-height: 36px;
     color: #fff;
     font-family: $font2;
-    text-align: center;
+    //pigeon text-align: center;
     font-weight: 400; 
     
     
     -webkit-font-smoothing: antialiased; 
     -moz-osx-font-smoothing: grayscale; 
-    //text-shadow: rgba(0, 0, 0, 0.6) 0 1px 8px, rgba(0, 0, 0, 0.6) 0px 0px 1px;
+    text-shadow: rgba(0, 0, 0, 0.6) 0 1px 8px, rgba(0, 0, 0, 0.6) 0px 0px 1px;
+    // text-shadow: 2px 2px 2px #000000;
 
     @include breakpoint(xs) {   
         font-size: 20px;
@@ -184,7 +191,7 @@ h2
     &.author
     {
         @include breakpoint(xs) { 
-             display: none;
+             //display: none;
         }
     }
 
@@ -192,7 +199,7 @@ h2
     {
         font-size: 35px;
         margin-top: 30px;
-        //margin-left: -15px;
+        margin-left: -15px;
         color: white !important;
         //@include transform(translate(-16%, 35%) scale(0.7));
 

@@ -1,716 +1,259 @@
 jQuery(document).ready(function($) 
 {
-
-  
-
-
-  function delWhiteSpace() {
-    setTimeout(function () {
-      $('footer').nextAll('div').css('display', 'none');
-    }, 3000);
-  }
+	// INITIALISATION DU SLIDER
+	// $('.bxslider').bxSlider({
+	// 	//mode: 'fade'
+	// });
 
 
+	//360
+	$('.video-360-poster').click(function(ev){
+		 players['video360'].playVideo();
+		 $(this).hide();
+	});
 
 
 
-  $(".btn-reveal").click(function() {
-    if (
-      $(this)
-        .parent()
-        .parent()
-        .hasClass("is-collapsed")
-    ) {
-      //alert('is-collapsed');
-      $(this)
-        .parent()
-        .parent()
-        .removeClass("is-collapsed"); 
-      $(this)
-        .parent()
-        .find("figure")
-        .addClass("is-hidden");
-      $(this)
-        .parent()
-        .find("span")
-        .addClass("is-hidden");
-      $(this).html("Masquer");
-    } else {
-      //alert("is-not-collapsed");
-      $(this)
-        .parent()
-        .parent()
-        .addClass("is-collapsed");
-      $(this)
-        .parent()
-        .find("figure")
-        .removeClass("is-hidden");
-      $(this)
-        .parent()
-        .find("span")
-        .removeClass("is-hidden");
-      $(this).html("Révéler");
-    }
-  });
 
-  // LAZYLOADING DES IMAGES AVEC LA CLASSE "LAZY"
-  $("img.lazy").lazyload({
-    effect: "fadeIn"
-  });
+//ytp-thumbnail-overlay-image
 
-  // scroll indicator
-  // $('body').progressScroll({
-  //    backgroundColor: "#3498DB",
-  //    height : "5px",
-  // });
+	// setTimeout(function() 
+	// {
+	// 	$('footer').nextAll('div').css('display', 'none');
+	// }, 5000);
 
-  // Vertical navigation
-  //var dotCounter = $('p.f-inter').length;
+	$(".owl").owlCarousel({
+	    items : 1,
+	    itemsDesktop: [1200,1],
+	    itemsTablet: [992,1],
+	    itemsMobile: [500,1],
+	    lazyLoad : true,
+	    navigation : true
+	 }); 
 
-  // init();
-  // function init(){
-  //    $('p.f-inter').each(function( index ) {
-  //        $('nav ul').append('<li></li>');
+	// LAZYLOADING DES IMAGES AVEC LA CLASSE "LAZY"
+	$("img.lazy").lazyload({
+	    effect : "fadeIn"
+	});
 
-  //    });
+	// ZOOM SUR LES IMAGES DISPOSANT DE LA CLASSE ZOOM
+	if ($(window).width() > 1200 )
+	{
+		$(".zoom").click(function() 
+		{
+			zoom.to({
+				element: $(this)[0]
+			});
+		});
+	} 	
 
-  //    $('nav ul li').on('click', function(e) {
-  //        $('nav ul li').removeClass('is-active');
-  //        $(this).addClass('is-active');
-  //        //alert($(this).index());
-  //        // SCROLL TO AN ELEMENT FUNCTION
-  //        $('html, body').animate({
-  //           scrollTop:$('p.f-inter:eq(' + $(this).index() + ')').offset().top
-  //        }, 1);
-  //    });
-
-  // ZOOM SUR LES IMAGES DISPOSANT DE LA CLASSE ZOOM
-  if ($(window).width() > 1200) {
-    $(".zoom").click(function() {
-      zoom.to({
-        element: $(this)[0]
-      });
-    });
-  }
-
-  // }
-
-  $(".slider").owlCarousel({
-    margin: 10,
-    loop: true,
-    items: 1,
-    lazyLoad: true,
-    nav: false,
-    navText: [
-      '<i class="fa fa-caret-left" aria-hidden="true"></i>',
-      '<i class="fa fa-caret-right" aria-hidden="true"></i>'
-    ]
-  });
-
-  
+	// SCROLL WHEN CLICK ON SCROLL INDICATOR
+	$(".scroll-indicator").click(function(){
+		$('html, body').animate({
+		   scrollTop:$('section:eq(0)').offset().top -80
+		}, 1000);
+	});
 
 
-  var chartColor0 = '#25A6D2';
-  var chartColor1 = '#DF681C';
-  var chartColor2 = '#F4965E';
-  var chartColor3 = '#FADECD';
-  var chartColor4 = '#F4EACE';
-  var chartColor5 = '#D3EDF6';
-  var chartColor6 = '#EAF2F4';
-  var chartColor7 = '#EFEDED';
+	var $numbers = $('.numbers'),
+		numbersDone = false;
+	
 
-  
+	$(window).scroll(function(){
+    	if ( $numbers.is(':in-viewport') && numbersDone ==false) {
+		  	$('.numbers h1 i').counterUp({
+				delay: 10, // the delay time in ms
+				time: 3000 // the speed time in ms
+			});
+			numbersDone = true;
+		}
+		
+	});
 
-  var chart1Done = false;
-  // $(window).scroll(function() {
-  //   if ($("#myChart").is(":in-viewport") && chart1Done == false) {
-      // CHART EVOLUTION DU NOMBRE D'ACTES ENREGISTRÉS PAR NIVEAU D'ENSEIGNEMENT
-      var ctx = document
-        .getElementById(
-          "myChart"
-        )
-        .getContext(
-          "2d"
-        );
-      var chart = new Chart(
-        ctx,
-        {
-          type:
-            "line",
-          data: {
-            labels: [
-              "2011-2012",
-              "2012-2013",
-              "2013-2014",
-              "2014-2015",
-              "2015-2016",
-              "2016-2017"
-            ],
-            datasets: [
-              {
-                fill: false,
-                pointRadius: 1,
-                label:
-                  "Cycle d'orientation",
-                data: [
-                  154,
-                  165,
-                  80,
-                  110,
-                  72,
-                  135
-                ],
-                backgroundColor:
-                  chartColor1,
-                borderColor:
-                  chartColor1,
-                borderWidth: 3
-                //lineTension: 0
-              },
-              {
-                fill: false,
-                pointRadius: 1,
-                label:
-                  "Ecole primaire",
-                data: [
-                  102,
-                  80,
-                  99,
-                  78,
-                  52,
-                  52
-                ],
-                backgroundColor:
-                  chartColor4,
-                borderColor:
-                  chartColor4,
-                borderWidth: 3
-                //lineTension: 0
-              },
-              {
-                fill: false,
-                pointRadius: 1,
-                label:
-                  "Ecole secondaire II",
-                data: [
-                  154,
-                  145,
-                  122,
-                  140,
-                  97,
-                  98
-                ],
-                backgroundColor:
-                  chartColor5,
-                borderColor:
-                  chartColor5,
-                borderWidth: 3
-                //lineTension: 0
-              }
-            ]
-          },
-          options: {
-            title: {
-              display: false,
-              fontSize: 16,
-              text:
-                "Évolution du nombre d'actes de violence enregistrés dans les écoles genevoises"
-            },
-            responsive: true,
-            maintainAspectRatio: false,
-            tooltips: {
-              enabled: false,
-              mode:
-                "nearest", //label
-              callbacks: {
-                afterTitle: function() {
-                  window.total = 0;
-                },
-                label: function(
-                  tooltipItem,
-                  data
-                ) {
-                  var corporation =
-                    data
-                      .datasets[
-                      tooltipItem
-                        .datasetIndex
-                    ]
-                      .label;
-                  var valor =
-                    data
-                      .datasets[
-                      tooltipItem
-                        .datasetIndex
-                    ]
-                      .data[
-                      tooltipItem
-                        .index
-                    ];
-                  window.total += valor;
-                  return (
-                    corporation +
-                    ": " +
-                    valor
-                      .toString()
-                      .replace(
-                        /\B(?=(\d{3})+(?!\d))/g,
-                        " "
-                      )
-                  );
-                }
-                // footer: function () {
-                //     return "TOTAL: " + window.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                // }
-              }
-            },
-            scales: {
-              yAxes: [
-                {
-                  // stacked: true,
-                  ticks: {
-                    beginAtZero: true,
-                    stepSize: 50
-                    //max: 200
-                  },
-                  scaleLabel: {
-                    display: true
-                    //labelString: "Nombre d'actes enregistés"
-                  }
-                }
-              ],
-              xAxes: [
-                {
-                  // stacked: true,
-                  ticks: {
-                    beginAtZero: true
-                  },
-                  scaleLabel: {
-                    display: true
-                    //labelString: "Années scolaires"
-                  }
-                }
-              ]
-            }
-          }
-        }
-      );
 
-  //     chart1Done = true;
-  //   }
-  // });
 
-  var chart2Done = false;
-  // $(window).scroll(function() {
-  //   if ($("#myChart2").is(":in-viewport") && chart2Done == false) {
-      // CHART RÉPARTITION 16 ANS
-      var ctx2 = document.getElementById("myChart2").getContext("2d");
-      var chart2 = new Chart(ctx2, {
-        type: "horizontalBar",
-        data: {
-          labels: [
-            "2016",
-            "2015",
-            "2014",
-            "2013",
-            "2012",
-            "2011",
-            "2010",
-            "2009",
-            "2008",
-            "2007",
-            "2006",
-            "2005",
-            "2004",
-            "2003",
-            "2002",
-            "2001",
-            "2000"
-          ],
-          datasets: [
-            {
-              fill: false,
-              pointRadius: 2,
-              label: "Formation gymnasiale",
-              data: [44, 44, 47, 47, 46, 46, 45, 45, 44, 46, 45, 47, 49, 46, 44, 42, 47],
-              backgroundColor: chartColor6,
-              borderColor: chartColor6,
-              borderWidth: 2,
-              lineTension: 0
-            },
-            {
-              fill: false,
-              pointRadius: 2,
-              label: "Formation de culture générale",
-              data: [11, 11, 13, 12, 11, 10, 11, 11, 10, 9, 8, 7, 6, 5, 12, 11, 10],
-              backgroundColor: chartColor5,
-              borderColor: chartColor5,
-              borderWidth: 2,
-              lineTension: 0
-            },
-            {
-              fill: false,
-              pointRadius: 2,
-              label: "Formation professionnelle en école à plein temps",
-              data: [18, 18, 15, 15, 15, 15, 15, 16, 18, 17, 17, 19, 18, 22, 15, 17, 15],
-              backgroundColor: chartColor4,
-              borderColor: chartColor4,
-              borderWidth: 2,
-              lineTension: 0
-            },
-            {
-              fill: false,
-              pointRadius: 2,
-              label: "Formation professionnelle duale",
-              data: [4, 3, 4, 4, 5, 5, 5, 5, 5, 6, 6, 5, 6, 5, 8, 9, 9],
-              backgroundColor: chartColor2,
-              borderColor: chartColor2,
-              borderWidth: 2,
-              lineTension: 0
-            },
-            {
-              fill: false,
-              pointRadius: 2,
-              label: "Structures de transition et d'accueil",
-              data: [15, 15, 14, 14, 14, 15, 15, 15, 13, 13, 14, 13, 12, 12, 10, 9, 7],
-              backgroundColor: chartColor1,
-              borderColor: chartColor1,
-              borderWidth: 2,
-              lineTension: 0
-            },
-            {
-              fill: false,
-              pointRadius: 2,
-              label: "Autres orientations",
-              data: [8, 9, 8, 9, 10, 10, 10, 8, 10, 10, 11, 10, 10, 10, 10, 12, 12],
-              backgroundColor: chartColor3,
-              borderColor: chartColor3,
-              borderWidth: 2,
-              lineTension: 0
-            }
-          ]
-        },
-        options: {
-          title: {
-            display: false,
-            text:
-              "De moins en moins d'apprentissages, de plus en plus d'élèves en transition"
-          },
-          responsive: true,
-          maintainAspectRatio: false,
-          tooltips: {
-            enabled: true,
-            mode: "label", //label
-            callbacks: {
-              afterTitle: function() {
-                window.total = 0;
-              },
-              label: function(tooltipItem, data) {
-                var corporation = data.datasets[tooltipItem.datasetIndex].label;
-                var valor =
-                  data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-                window.total += valor;
-                return (
-                  corporation +
-                  ": " +
-                  valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")+ '%'
-                );
-              }
-              // footer: function () {
-              //     return "TOTAL: " + window.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-              // }
-            }
-          },
-          scales: {
-            yAxes: [
-              {
-                stacked: true,
-                ticks: {
-                  beginAtZero: true,
-                  stepSize: 50
 
-                  //max: 200
-                },
-                scaleLabel: {
-                  display: true
-                  //labelString: "Nombre d'actes enregistés"
-                }
-              }
-            ],
-            xAxes: [
-              {
-                stacked: true,
-                ticks: {
-                  beginAtZero: true,
-                  callback: function(tick) {
-                    return tick.toString() + "%";
-                  },
-                  max: 100
-                  
-                },
-                scaleLabel: {
-                  display: true
-                  //labelString: "Années scolaires"
-                }
-              }
-            ]
-          }
-        }
-      });
+	// CHART CONFIG
+	Chart.defaults.groupableBar = Chart.helpers.clone(Chart.defaults.bar);
 
-      chart2Done = true;
-  //   }
-  // });
+	var helpers = Chart.helpers;
+	Chart.controllers.groupableBar = Chart.controllers.bar.extend({
+	  calculateBarX: function (index, datasetIndex) {
+	    // position the bars based on the stack index
+	    var stackIndex = this.getMeta().stackIndex;
+	    return Chart.controllers.bar.prototype.calculateBarX.apply(this, [index, stackIndex]);
+	  },
 
-  var chart3Done = false;
-  // $(window).scroll(function(){
-  //     if ( $('#myChart3').is(':in-viewport') && chart3Done == false) {
-       // CHART PIE
-        var ctx3 = document.getElementById("myChart3").getContext("2d");
-        var chart3 = new Chart(ctx3, {
-          type: "pie",
-          data: {
-            labels: ["GE", "NE", "VD", "JU", "FR", "VS"],
-            datasets: [
-              {
-                label: "Très souvent",
-                backgroundColor: [
-                  chartColor2,
-                  chartColor3,
-                  chartColor4,
-                  chartColor5,
-                  chartColor6,
-                  chartColor7
-                ],
-                data: [35.6, 23, 24.2, 23.3, 16.8, 14.6]
-              },
-              {
-                label: "Souvent",
-                backgroundColor: [
-                  chartColor2,
-                  chartColor3,
-                  chartColor4,
-                  chartColor5,
-                  chartColor6,
-                  chartColor7
-                ],
-                data: [30.1, 35, 29.8, 29.6, 30.3, 27.2]
-              }
-              // {
-              //   label: "Jours maladies",
-              //   backgroundColor: [
-              //     "red",
-              //     "#EFEDED",
-              //     "#EFEDED",
-              //     "#EFEDED",
-              //     "#EFEDED",
-              //     "#EFEDED",
-              //     "#EFEDED"
-              //   ],
-              //   data: [17, 10, 5, 5, 3, 3, 1]
-              // }
-            ]
-          },
-          options: {
-            title: {
-              display: false,
-              text:
-                "«J'ai l'impression de devoir tenir le coup pendant la période scolaire»"
-            },
-            tooltips: {
-              enabled: true,
-              mode: "label", //label
-              callbacks: {
-                // afterTitle: function() {
-                //   window.total = 0;
-                // },
-                label: function(tooltipItem, data) {
-                  var corporation =
-                    data.datasets[tooltipItem.datasetIndex].label;
-                  var valor =
-                    data.datasets[tooltipItem.datasetIndex].data[
-                      tooltipItem.index
-                    ];
-                  window.total += valor;
-                  return (
-                    corporation +
-                    ": " +
-                    valor
-                      .toString()
-                      .replace(/\B(?=(\d{3})+(?!\d))/g, " ") +
-                    "%"
-                  );
-                }
-                // footer: function () {
-                //     return "TOTAL: " + window.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                // }
-              }
-            },
-            responsive: true,
-            maintainAspectRatio: false
-          }
-        });
+	  hideOtherStacks: function (datasetIndex) {
+	    var meta = this.getMeta();
+	    var stackIndex = meta.stackIndex;
 
-        chart3Done = true;
-  //   }
-  // });
+	    this.hiddens = [];
+	    for (var i = 0; i < datasetIndex; i++) {
+	      var dsMeta = this.chart.getDatasetMeta(i);
+	      if (dsMeta.stackIndex !== stackIndex) {
+	        this.hiddens.push(dsMeta.hidden);
+	        dsMeta.hidden = true;
+	      }
+	    }
+	  },
 
-  
+	  unhideOtherStacks: function (datasetIndex) {
+	    var meta = this.getMeta();
+	    var stackIndex = meta.stackIndex;
 
-  // var chart3 = new Chart(ctx3, {
-  //   type: "bar",
-  //   data: {
-  //     labels: ["GE", "FR", "VS", "JU", "NE", "VD", "BE"],
-  //     datasets: [
-  //       {
-  //         label: "Très souvent",
-  //         backgroundColor: [
-  //           "#F0551B",
-  //           "#DCA561",
-  //           "#DCA561",
-  //           "#DCA561",
-  //           "#DCA561",
-  //           "#DCA561",
-  //           "#DCA561"
-  //         ],
-  //         data: [35.6, 16.8, 14.6, 23.3, 23, 24.2, 20.4]
-  //       },
-  //       {
-  //         label: "Souvent",
-  //         backgroundColor: [
-  //           "#F4965E",
-  //           "#FDC98A",
-  //           "#FDC98A",
-  //           "#FDC98A",
-  //           "#FDC98A",
-  //           "#FDC98A",
-  //           "#FDC98A"
-  //         ],
-  //         data: [30.1, 30.3, 27.2, 29.6, 35, 29.8, 22]
-  //       }
-  //       // {
-  //       //   label: "Jours maladies",
-  //       //   backgroundColor: [
-  //       //     "red",
-  //       //     "#EFEDED",
-  //       //     "#EFEDED",
-  //       //     "#EFEDED",
-  //       //     "#EFEDED",
-  //       //     "#EFEDED",
-  //       //     "#EFEDED"
-  //       //   ],
-  //       //   data: [17, 10, 5, 5, 3, 3, 1]
-  //       // }
-  //     ]
-  //   },
-  //   options: {
-  //     scales: {
-  //           xAxes: [{
-  //               stacked: true
-  //           }],
-  //           yAxes: [{
-  //               stacked: true
-  //           }]
-  //       },
-  //     title: {
-  //       display: true,
-  //       text:
-  //         "J'ai l'impression de devoir «tenir le coup» pendant la période scolaire"
-  //     },
-  //     tooltips: {
-  //       enabled: true,
-  //       mode: "label", //label
-  //       callbacks: {
-  //         afterTitle: function() {
-  //           window.total = 0;
-  //         },
-  //         label: function(tooltipItem, data) {
-  //           var corporation = data.datasets[tooltipItem.datasetIndex].label;
-  //           var valor =
-  //             data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-  //           window.total += valor;
-  //           return (
-  //             corporation +
-  //             ": " +
-  //             valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") +
-  //             "%"
-  //           );
-  //         }
-  //         // footer: function () {
-  //         //     return "TOTAL: " + window.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-  //         // }
-  //       }
-  //     },
-  //     responsive: true,
-  //     maintainAspectRatio: false
-  //   }
-  // });
+	    for (var i = 0; i < datasetIndex; i++) {
+	      var dsMeta = this.chart.getDatasetMeta(i);
+	      if (dsMeta.stackIndex !== stackIndex) {
+	        dsMeta.hidden = this.hiddens.unshift();
+	      }
+	    }
+	  },
 
-  // $(".button").on('click', function(e) {
-  //    $('.button').removeClass('is-active');
-  //    $(this).addClass('is-active');
-  //    // alert('hello');
-  //    // $(".iframe").load('http://theurltoload.com')
-  //    // e.preventDefault();
-  //    e.preventDefault();
-  //    var $el = $(this);
-  //    // alert($el.attr('map-url'));
-  //    $(".iframe").attr("src", $el.attr('map-url'));
-  // });
+	  calculateBarY: function (index, datasetIndex) {
+	    this.hideOtherStacks(datasetIndex);
+	    var barY = Chart.controllers.bar.prototype.calculateBarY.apply(this, [index, datasetIndex]);
+	    this.unhideOtherStacks(datasetIndex);
+	    return barY;
+	  },
 
-  // THIS IS EXECUTED WHEN EVERYTHING IS LOADED
-  // var everythingLoaded = setInterval(function() {
-  //   if (/loaded|complete/.f-inter(document.readyState)) {
-  //     clearInterval(everythingLoaded);
-  //   }
-  // }, 10);
+	  calculateBarBase: function (datasetIndex, index) {
+	    this.hideOtherStacks(datasetIndex);
+	    var barBase = Chart.controllers.bar.prototype.calculateBarBase.apply(this, [datasetIndex, index]);
+	    this.unhideOtherStacks(datasetIndex);
+	    return barBase;
+	  },
 
-  // USE THIS IF SOMETHING CANT LOAD CORRECTLY
-  // $(window).load(function(){
-  // });
+	  getBarCount: function () {
+	    var stacks = [];
 
-  // THIS IS DONE AT EVERY SCROLL
-  // $(window).scroll(function (event) {
-  //    });
+	    // put the stack index in the dataset meta
+	    Chart.helpers.each(this.chart.data.datasets, function (dataset, datasetIndex) {
+	      var meta = this.chart.getDatasetMeta(datasetIndex);
+	      if (meta.bar && this.chart.isDatasetVisible(datasetIndex)) {
+	        var stackIndex = stacks.indexOf(dataset.stack);
+	        if (stackIndex === -1) {
+	          stackIndex = stacks.length;
+	          stacks.push(dataset.stack);
+	        }
+	        meta.stackIndex = stackIndex;
+	      }
+	    }, this);
 
-  // SCROLL TO AN ELEMENT FUNCTION
-  //$('html, body').animate({
-  //    scrollTop:$('.element').offset().top
-  //}, 1000);
+	    this.getMeta().stacks = stacks;
+	    return stacks.length;
+	  },
+	});
 
-  // SCROLL TO A CALCULATED HEIGHT
-  //$('html, body').animate({
-  //      scrollTop:$(scrollHeight).offset().top
-  //}, 1000);
+	var data = {
+	  labels: ["2011", "2012", "2013", "2014", "2015"],
+	  datasets: [
+	    {
+	      label: "AQ (Analog Quartz)",
+	      backgroundColor: "rgba(99,132,255,0.2)",
+	      data: [38.2, 39.7, 39.6, 40.4, 40.1],
+	      stack: 1
+	    },
+	    {
+	      label: "DQ (Digital Quartz)",
+	      backgroundColor: "rgba(99,255,132,0.2)",
+	      data: [17.0, 17.6, 17.9, 17.7, 17.6],
+	      stack: 1
+	    },
+	    {
+	      label: "ME (Mechanical Watch)",
+	      backgroundColor: "rgba(255,99,132,0.2)",
+	      data: [2.7, 2.6, 2.3, 2.2, 1.8],
+	      stack: 1
+	    }
+	  ]
+	};
 
-  // SIMPLE CLICK
-  //    $(".menu").click(function(){
-  // });
+	var data2 = {
+	  labels: ["2011", "2012", "2013", "2014", "2015"],
+	  datasets: [
+	    {
+	      label: "AQ (Analog Quartz)",
+	      backgroundColor: "rgba(99,132,255,0.2)",
+	      data: [75.2, 77.9, 93.6, 107.1, 122.4],
+	      stack: 1
+	    },
+	    {
+	      label: "DQ (Digital Quartz)",
+	      backgroundColor: "rgba(99,255,132,0.2)",
+	      data: [14.3, 15.6, 18.2, 20.1, 21.0],
+	      stack: 1
+	    },
+	    {
+	      label: "ME (Mechanical Watch)",
+	      backgroundColor: "rgba(255,99,132,0.2)",
+	      data: [11.5, 12.3, 13.0, 14.1, 13.9],
+	      stack: 1
+	    }
+	  ]
+	};
+	
+	var graphGenerated = false;
+	$(window).scroll(function(){
+    	if ($('.gallery .trigger').is(':in-viewport') && graphGenerated == false) {
 
-  // SET A DELAY IN A FUNCTION
-  // setTimeout(function()
-  // {
-  // }, 250);
+    		// SET A DELAY IN A FUNCTION
+			setTimeout(function() 
+			{
+				setTimeout(function() 
+				{
+					$('canvas').addClass('is-visible');
+				}, 100);
 
-  // KEEP A DIV SQUARE HACK
-  // var largeur = $('.un-quart').width();
-  // $('.un-quart').height(largeur);
+				var ctx = document.getElementById("myChart").getContext("2d");
+				new Chart(ctx, {
+				  type: 'groupableBar',
+				  data: data,
+				  options: {
+				  	title: {
+			            display: true,
+			            text: 'UNITÉS (en millions de pièces)'
+			        },
+				    scales: {
+				      yAxes: [{
+				        ticks: {
+				          max: 70,
+				        },
+				        stacked: true,
+				      }]
+				    }
+				  }
+				});
 
-  //    $(window).resize(function(){
-  //        var largeur = $('.un-quart').width();
-  //        $('.un-quart').height(largeur);
-  //    });
+				var ctx2 = document.getElementById("myChart2").getContext("2d");
+				new Chart(ctx2, {
+				  type: 'groupableBar',
+				  data: data2,
+				  options: {
+				  	title: {
+			            display: true,
+			            text: 'VALEUR (en milliard de Yens)'
+			        },
+				    scales: {
+				      yAxes: [{
+				        ticks: {
+				          max: 160,
+				        },
+				        stacked: true,
+				      }]
+				    }
+				  }
+				});
+			}, 500);
 
-  // THIS IS EXECUTED ON RESIZE
-  // $(window).resize(function(){
+			graphGenerated = true;
+		}
+	});
 
-  // });
 
-  // THIS IS EXECUTED DEPENDING ON WINDOW WIDTH
-  // if($(window).width() > 500)
-  // {
-  // }
 
-    
+
+
+
 
 });

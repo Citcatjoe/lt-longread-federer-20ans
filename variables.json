@@ -1,19 +1,15 @@
 {
-	"brand": "letemps",
-	"title": "Face aux classes infernales, les profs romands vivent un cauchemar",
-	"description": "Maintenir la discipline chez les 12-15 ans épuise le corps enseignant. A Genève, le système du cycle a créé des ghettos scolaires, parfois ingérables. Enquête sur un mal qui empoisonne l'école.",
-	"twitterDescription": "Maintenir la discipline chez les 12-15 ans épuise le corps enseignant. A Genève, le système du cycle a créé des ghettos scolaires, parfois ingérables. Enquête sur un mal qui empoisonne l'école.",
-	"authors": "Sylvain Besson, César Greppin",
-	"imgSocial": "social.jpg", 
-	
+	"title": "Dans les champs romands, la bataille des pesticides",
+	"description": "Les agriculteurs sont de plus en plus montrés du doigt en raison de l’impact des produits phytosanitaires sur l’environnement. La Suisse peut-elle vraiment se passer de ces produits?",
+	"authors": "Pascaline Minet, César Greppin",
+	"imgSocial": "social.jpg",   
 
 	"navBarStyle": "black",
 	"navBarOffset": "0",
 	"navBarLocked": false,
-	"devmode": false,
 
 	"partner": {
 		"logo": "img/empty.png",
-		"link": "http://www.letemps.ch"
+		"link": "http://www.letemps.ch/"
 	}
 }

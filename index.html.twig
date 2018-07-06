@@ -3,1319 +3,628 @@
 <!DOCTYPE HTML>
 
 <html>
-
 	<head>
+
 		{{ block('head_brand') }}
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<link rel="stylesheet" type="text/css" href="css/loader.css" />
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
+		<link rel="stylesheet" type="text/css" href="css/owl.theme.css" />
+		<link href='https://fonts.googleapis.com/css?family=Merriweather:400,900,400italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+		<script src="https://www.youtube.com/iframe_api"></script>
+		<script>var players = [];</script>
 
-		<script src="https://use.typekit.net/pve7eut.js"></script>
-		<script>try{Typekit.load({ async: true });}catch(e){}</script> 
-
-		<script>
-			document.documentElement.className = 'js';
-		</script>
-		
 	</head>
-
 	<body style="padding-top: {{ navBarOffset }};">
 		{{ block('bar_brand') }}
-		<div class="overlay">
-			<img class="logo-brand" src="img/logo-lt-blanc.svg" alt="">
+
+		<!-- <div class="fixed-map-wrapper">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 viewBox="0 0 352 824" style="enable-background:new 0 0 352 824;" xml:space="preserve">
+				<style type="text/css">
+					.st0{display:none;}
+					.st1{fill:none;stroke:#C9C9C9;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+					.st2{fill:none;stroke:#BFBFBF;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+					.st3{fill:none;stroke:#00AFF4;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+					.st4{opacity:0.75;}
+					.st5{fill:#4C4C4C;}
+					.st6{font-family:'HelveticaNeue-Light';}
+					.st7{font-size:13.5138px;}
+					.st8{fill:#545454;}
+					.st9{font-size:19.9114px;}
+					.st10{stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+					.st11{opacity:0.75;fill:#4C4C4C;enable-background:new    ;}
+					.st12{opacity: 0.25 !important;}
+				</style>
+				<g id="map" class="st0">
+					
+						<image style="display:inline;overflow:visible;opacity:0.51;" width="1914" height="1110" xlink:href="../../../../Desktop/Capture d’écran 2017-07-10 à 13.47.32.png"  transform="matrix(0.3805 1.429 -1.429 0.3805 479.8834 -585.5818)">
+					</image>
+				</g>
+				<g id="wall">
+					<g id="Calque_2" class="st0">
+						
+							<image style="display:inline;overflow:visible;opacity:0.65;enable-background:new    ;" width="1914" height="1110" xlink:href="../../../../Desktop/Capture d’écran 2017-07-10 à 13.47.32.png"  transform="matrix(0.2159 0.7463 -0.7463 0.2159 330.298 -298.1519)">
+						</image>
+					</g>
+					<g id="Calque_1_1_">
+						<g id="path-full">
+							<path class="st1" d="M120.4,48.5c0,0,21.2,69.4,25.1,77.1s19.3,38.5,21.2,46.3c1.9,7.7,3.9,21.2,3.9,21.2h-25.1v88.7l-7.7,25.1
+								l-5.8,21.2v52l-5.8,19.3v17.3l-5.8,55.9l25.1,67.5l7.7,40.5l15.4,38.5l9.6,30.8c0,0,28.9-7.7,30.8-7.7c1.9,0,9.6,1.9,9.6,1.9V673
+								l21.2,38.5l9.6,34.7"/>
+						</g>
+					</g>
+				</g>
+				<g id="path-phoenix-nogales">
+					<path class="st3" d="M277.1,344.2l-7.3,6.5l-1.6,8.6l-8.6,3l-21.5,24.5l-9.4,3.2c-0.9,1-6,16.3-9.1,25l-19.1,31.2l-34.7,9.1
+						l-10.8-2.4l-14,4.8l-4.6,6.7l-14.5,9.9"/>
+				</g>
+				<g id="path-nogales-tombstone-elpaso">
+					<path class="st3" d="M120.9,477l27.7,10.1l3.4,5.1l5.8,4.9c0,0,6.3,2.4,8.2,3.8c1.8,1.4,4,3.8,4,3.8l8.3,6.7l4.2,10.5l6.3,14.3
+						L189,552l9.1,22.3l11.8,23.5l3.6,18.1l23.4,2.2l22.1,50.9l-1.6,11.2l15.4,40.6l-21.9,27.5"/>
+				</g>
+				<g id="path-elpaso-tucson-sells">
+					<path class="st3" d="M250.7,748.4l21.9-27.5l-15.4-40.6l1.6-11.2l-22.1-50.9l7.3-21.3l-0.9-7.4l-15.1-14.5l0.3-43.1l-3.5-7.4
+						l-12.4-5.6l-11.5-7.4c0,0-8.6-3.9-9.4-4.4s-5.3-10.6-5.3-10.6l-3.5-15.1l0.6-10.6l6.5-14.8l10.7-9.9l-24-25.3l-19.8-12.7"/>
+				</g>
+				<g id="path-sells-yuma">
+					<path class="st3" d="M156.7,406.3l2.4-35.1c0,0-11.6-37.1-11.5-38.4c0.1-1.3,4.7-10.6,4.7-10.6l23.3-5l15.4-13l18.6-5.6l-9.7-22.1
+						l-13-16.5l-10-19.8l-5.9-13.9l3.8-10"/>
+				</g>
+				<g id="path-yuma-sandiego">
+					<path class="st3" d="M175.3,213c0,0,0.9-13.3,0.9-14.8c0-1.5-2.4-17.7-2.4-17.7l-4.4-15.9L157,138l-8.9-17.4L135.4,81l-6.8-26
+						l-10.3-8"/>
+				</g>
+				<g id="phoenix-text">
+					<g class="st4">
+						<text transform="matrix(1 0 0 1 290.4651 348.3571)" class="st5 st6 st7">Phoenix</text>
+					</g>
+				</g>
+				<g id="phoenix-dot">
+					<g id="step1-dot_9_">
+						<circle class="st8" cx="277" cy="344" r="3.5"/>
+					</g>
+				</g>
+				<g id="nogales-text">
+					<text transform="matrix(1 0 0 1 27.9042 481.3255)" class="st5 st6 st9">Nogales</text>
+					<text transform="matrix(1 0 0 1 38.4042 504.3255)" class="st5 st6 st9">(MEX)</text>
+					<text transform="matrix(1 0 0 1 142.0031 481.8817)" class="st5 st6 st9"> Nogales (USA)</text>
+				</g>
+				<g id="nogales-dot">
+					<g id="step1-dot_2_">
+						<circle class="st10" cx="120.7" cy="475.6" r="7.3"/>
+					</g>
+				</g>
+				<g id="tombstone-text">
+					<text transform="matrix(1 0 0 1 192.0889 514.8159)" class="st11 st6 st7">Tombstone</text>
+				</g>
+				<g id="tombstone-dot">
+					<g id="step1-dot_3_">
+						<circle class="st8" cx="178.4" cy="510.5" r="3.5"/>
+					</g>
+				</g>
+				<g id="elpaso-text">
+					<text transform="matrix(1 0 0 1 170.4007 755.1216)" class="st5 st6 st9">Juarez</text>
+					<text transform="matrix(1 0 0 1 174.2007 779.0216)" class="st5 st6 st9">(MEX)</text>
+					<text transform="matrix(1 0 0 1 270.8035 755.6919)" class="st5 st6 st9">El Paso</text>
+					<text transform="matrix(1 0 0 1 278.9035 779.5919)" class="st5 st6 st9">(USA)</text>
+				</g>
+				<g id="elpaso-dot">
+					<g id="step1-dot">
+						<circle class="st10" cx="248.7" cy="748.2" r="7.3"/>
+					</g>
+				</g>
+				<g id="tucson-text">
+					<g class="st4">
+						<text transform="matrix(1 0 0 1 213.5341 450.7631)" class="st5 st6 st7">Tucson</text>
+					</g>
+				</g>
+				<g id="tucson-dot">
+					<g id="step1-dot_4_">
+						<circle class="st8" cx="200.1" cy="444.9" r="3.5"/>
+					</g>
+				</g>
+				<g id="sells-text">
+					<g class="st4">
+						<text transform="matrix(1 0 0 1 170.8308 412.7429)" class="st5 st6 st7">Sells</text>
+					</g>
+				</g>
+				<g id="sells-dot">
+					<g id="step1-dot_5_">
+						<circle class="st8" cx="157.5" cy="408.3" r="3.5"/>
+					</g>
+				</g>
+				<g id="ajo-text">
+					<g class="st4">
+						<text transform="matrix(1 0 0 1 189.123 320.9916)" class="st5 st6 st7">Ajo</text>
+					</g>
+				</g>
+				<g id="ajo-dot">
+					<g id="step1-dot_1_">
+						<circle class="st8" cx="176.5" cy="316.2" r="3.5"/>
+					</g>
+				</g>
+				<g id="yuma-text">
+					<g class="st4">
+						<text transform="matrix(1 0 0 1 189.1637 219.5013)" class="st5 st6 st7">Yuma</text>
+					</g>
+				</g>
+				<g id="yuma-dot">
+					<g id="step1-dot_7_">
+						<ellipse class="st8" cx="174.5" cy="215.2" rx="3.5" ry="3.5"/>
+					</g>
+				</g>
+				<g id="sandiego-text">
+					<text transform="matrix(1 0 0 1 145.6796 55.2096)" class="st5 st6 st9">San Diego</text>
+					<text transform="matrix(1 0 0 1 165.9796 79.1096)" class="st5 st6 st9">(USA)</text>
+					<text transform="matrix(1 0 0 1 34.1328 53.6955)" class="st5 st6 st9">Tijuana</text>
+					<text transform="matrix(1 0 0 1 39.8328 77.5955)" class="st5 st6 st9">(MEX)</text>
+				</g>
+				<g id="sandiego-dot">
+					<g id="step1-dot_8_">
+						<circle class="st10" cx="119.8" cy="47.7" r="7.3"/>
+					</g>
+				</g>
+			</svg>
+		</div> -->
+		
+		<!-- <div class="overlay">
+			<img class="logo-lt-blanc" src="img/logo-lt-blanc.svg" alt="">
 			<div class="spinner">
 				<div class="double-bounce1"></div>
 				<div class="double-bounce2"></div>
 			</div>
-		</div>
-		
-		<!-- <div class="progress"></div> -->
-
-		<!-- <nav>
-			<ul>
-			</ul>
-		</nav> -->
+		</div> -->
 
 		<header>
-			<div class="header--bg">
-				<div class="header-gradient"></div>
-				<div class="header--bg--img"></div>
-				{# <div class="header--bg--vid">
-					<video autoplay loop muted>
-						<source src="https://player.vimeo.com/external/252678358.hd.mp4?s=2275fdf9c90244cc9aa0b7fdfa9850d82948dc3a&profile_id=175"
-						 type="video/mp4"> Votre navigateur ne supporte pas les vidéos HTML%.
-					</video>
-				</div> #}
-			</div>
+			<div class="header__bg"></div>
+			<div class="header__gradient"></div>
 			
-			<div class="header--title"> 
-				<div class="container">
-					<h1 class="f-font1 f-weight400 f-h1 f-white-special">Face aux classes infernales, les profs romands vivent un cauchemar</h1>
-					<div class="spacer-xs"></div>
-					<h2 class="f-font1 f-h2 f-white-special f-aa">Maintenir la discipline chez les 12-15 ans épuise le corps enseignant. A Genève, le système du cycle a créé des ghettos scolaires,
-					parfois ingérables. Enquête sur un mal qui empoisonne l'école</h2>
+			<!-- <div class="video-wrapper">
+				<video playsinline autoplay loop muted>
+				  <source src="https://player.vimeo.com/external/272224606.hd.mp4?s=0767373c2b5d80d663ef69df7f25421cf400f1e7&profile_id=175" type="video/mp4"> 
+				  Votre navigateur ne supporte pas les vidéos HTML%.
+				</video>
+			</div> -->
+
+			<!-- <div class="smil-wrapper">
+				<div class="layer layer-bg"><img src="img/scene-intro-bg.svg" alt=""></div>
+				<div class="layer layer-clouds"><img src="quoi bon/scene-intro-clouds.svg" alt=""></div>
+				
+				<div class="layer layer-smoke1"><img src="img/scene-intro-smoke1.svg" alt=""></div>
+				<div class="layer layer-smoke2"><img src="img/scene-intro-smoke2.svg" alt=""></div>
+				<div class="layer layer-msc"><img src="img/scene-intro-msc.svg" alt=""></div>
+				<div class="layer layer-speedboat"><img src="img/scene-intro-speedboat.svg" alt=""></div>
+				<div class="layer layer-fishboat"><img src="img/scene-intro-fishboat.svg" alt=""></div>
+			</div> -->
+
+			<div class="header__content">
+				<div class="header__content__container">
+					<div class="header__content__container__box">
+						<h1>Federer ça fait 20 ans qu'il tape dans la balle quoi<br><!-- <span></span> --></h1>
+						<!-- <img class="separateur" src="img/separateur.svg" alt=""> -->
+						<h2 class="author">Un article de<span> Laurent Favre</span></h2>	
+						<h2 class="social" >
+							<a target="blank" href="https://www.facebook.com/sharer.php?u={{ app.url }}&display=popup&ref=plugin&src=share_button"><i class="fa fa-facebook"></i></a>
+							<a target="blank" href="https://twitter.com/intent/tweet?text={{ description ~ ' ' ~ app.url ~ ' '|url_encode }}&via=letemps"><i class="fa fa-twitter fa-middle"></i></a>
+							<a target="blank" href="https://www.linkedin.com/shareArticle?url={{ app.url }}&mini=true&title={{ title|url_encode }}&summary={{ description|url_encode }}&source={{ 'Le Temps'|url_encode }}"><i class="fa fa-linkedin"></i></a>
+						</h2>
+					</div>
 				</div>
-			</div>
+			</div> 
+
 			
+
+			<div class="scroll-indicator">
+				<div class="scroll-indicator-inner"></div> 
+			</div>
+
+			<!-- <div class="header-sponsor">
+				<a href="https://www.letemps.ch/partenariats" target="_blank"><span class="charte">[?]</span></a>
+				<a href="https://www.mirabaud.com/fr/" target="_blank"><img src="img/logo-sponsor-only.svg" alt=""></a> 
+				<span>Avec le soutien de </span>
+
+			</div> -->
 		</header>
 
-		<section>
+		
+
+		<section class="text padding-bottom">
 			<div class="container">
-				<div class="row">
 
-					<div class="box-aside infos is-absolute col-md-4">
-						<p class="f-font1 f-aside f-gray-dark f-nomargin">
-							<span class="f-font1 f-weight600">Sylvain Besson</span><span class="f-aa">, rédacteur en chef adjoint et journaliste d'investigation au <i>Temps</i></span>
-						</p>
-						<div class="spacer-sm"></div>
-						<a href="mailto:sylvain.besson@letemps.ch" target="_blank"><button type="button" class="btn btn-default btn-lg f-font3 f-weight600 f-aa">Lui écrire</button></a>
-						<div class="spacer-sm"></div>
-						<p class="f-font1 f-aside f-gray-medium f-aa f-nomargin">Publié le 7 avril 2018<br>20 minutes de lecture</p>
-						<div class="spacer-lg"></div>
-						<p class="f-font1 f-weight600 f-aside f-black f-nomargin">Partager cet article</p>
-						<div class="spacer-xs"></div>
-						<div class="sharebox">
-							<a href="https://www.facebook.com/sharer.php?u={{ app.url }}&display=popup&ref=plugin&src=share_button" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
-							<a href="https://twitter.com/intent/tweet?text={{ twitterDescription ~ ' ' ~ app.url ~ ' '|url_encode }}&via={{ brand }}" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
-							<a href="https://www.linkedin.com/shareArticle?url={{ app.url }}&mini=true&title={{ title|url_encode }}&summary={{ description|url_encode }}&source={{ 'Le Temps'|url_encode }}" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
-						</div>
-					</div>
+				<h3>
+					Les agriculteurs sont de plus en plus montrés du doigt en raison de l’impact des produits phytosanitaires sur l’environnement, comme en témoigne le succès de l’initiative populaire «Pour une suisse sans pesticides», récemment déposée. Mais la Suisse peut-elle vraiment se passer de ces produits?	<hr> 
+				</h3>
+
+				<div class="spacer-small"></div>
+				<div class="spacer-small"></div>
+
+				<h4>
+					Texte: Pascaline Minet<br>
+					<span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>Illustrations: Florent Collioud et César Greppin<br>
+					<span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>Iconographie: Catherine Rüttimann<br>
+					<span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span> Vidéos: Arnaud Mathier<br>
+					<span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span> Webdesign et animation: César Greppin
+				</h4>
+
+				<p>
+					C’est une partie de pêche qui a fait prendre conscience du problème à Gabriel de la Harpe. Il y a quelques années, cet agriculteur et employé communal de Yens a assisté le garde-pêche alors qu’il effectuait des prélèvements dans le Boiron, une rivière du canton de Vaud qui parcourt de nombreuses zones agricoles.«Au niveau de la source, il y avait une grande variété de poissons, de plantes aquatiques et même une écrevisse locale d’une grande rareté. Mais cette diversité a disparu à mesure qu’on descendait le cours de la rivière. Arrivé au niveau de Tolochenaz, elle était comme morte», se remémore Gabriel de la Harpe, dont l’exploitation se situe dans le bassin-versant du Boiron. A la suite de cette expérience, il a rejoint un programme fédéral visant à réduire son usage de pesticides et a participé à la création du réseau écologique du Boiron, qu’il préside aujourd’hui.
+				</p>
+
+				<!-- (EXPERIMENTAL) CITATION DROIT DANS UN PARAGRAPHE. DOIT ETRE DANS UNE SECTION -->
+				<blockquote class="right">
+					<span>Nous avons reçu des milliers de courriers de personnes qui nous remercient, pour leur avenir et celui de leurs enfants</span>
+					<div class="caption"><b>ETIENNE KUHN</b>, membre du comité d’initiative apolitique «Pour une Suisse libre de pesticides de synthèse»</div>
+				</blockquote>
+
+				<p>
+					L’impact des produits phytosanitaires sur l’environnement et sur la santé alarme un nombre croissant de personnes en Suisse. L’année passée, la réautorisation dans l’Union européenne du glyphosate, herbicide soupçonné d’être cancérigène, a contribué à sensibiliser un large public, au-delà de celui des écologistes convaincus. «Nous bénéficions d’une sympathie affolante, affirme Etienne Kuhn, membre du comité d’initiative apolitique «Pour une Suisse libre de pesticides de synthèse», déposée le 25 mai à la Chancellerie fédérale à Berne. Nous avons reçu des milliers de courriers de personnes qui nous remercient, pour leur avenir et celui de leurs enfants.»En janvier, une autre initiative populaire intitulée «Pour une eau potable propre et une alimentation saine» avait également abouti; un de ses objectifs est de réserver l’octroi de paiements directs aux agriculteurs qui n’utilisent pas de pesticides de synthèse.
+				</p>
+
+				<p>
+					 La situation se tend donc entre une société qui demande une transformation écologique de l’agriculture – sans forcément
+					en imaginer les conséquences – et des professionnels qui se sentent montrés du doigt. Comment sortir de cette ornière? Notre
+					enquête montre que ce ne sera pas facile, car l’agriculture suisse, l’une des plus intensives au monde, est fortement dépendante
+					des pesticides. Mais des pistes de changement existent bel et bien. Depuis quelques années, les agriculteurs tentent de limiter leur recours
+					aux pesticides. Dans les champs, les vergers et les vignobles, mais aussi au sein des centres de recherche et des organisations
+					professionnelles, une bataille s’est engagée pour produire avec moins de chimie.
+				</p>
 
-					<div class="content col-md-12">
-						
-						<p class="lettrine">
-							 Après des mois de punitions et de recadrages infructueux, la classe la plus pénible du Cycle de Pinchat a fini par exploser.
-							C’était en janvier dernier.
-						</p>
-						<p>
-							 A bout de nerfs – certains ont craqué, voire pleuré – les enseignants de la 1011 CT ont pris une décision radicale: dissoudre
-							la classe et disperser sa douzaine d’élèves dans le reste de l’école, située à la lisière sud de Genève, entre Carouge et
-							Veyrier.
-						</p>
-
-						<p>
-							 «Les élèves ne se respectaient pas entre eux et discutaient systématiquement les directives des enseignants, raconte le
-							directeur de Pinchat, Alain Basset. Ils demandaient: «Pourquoi je devrais travailler? Pourquoi je devrais arrêter de discuter?»
-							Malgré l’intervention d’un coach extérieur, «on a constaté que ça n’allait plus du tout», résume-t-il.
-						</p>
-
-						<p>
-							 Le cas est extrême, mais partout en Suisse romande, des situations semblables se produisent. Notamment dans des classes
-							de 12-15 ans, placés au bas de l’échelle scolaire, qui se sentent méprisés par le système. Et qui, par représailles, font
-							subir l’enfer à leurs profs.
-						</p>
-
-						
-
-						<!-- GRAPH full -->
-						
-						<!-- PICTURE normal -->
-						<div class="box-full col-md-12">
-							<div class="row">
-								<div class="spacer-sm"></div>
-								<figure class="figure-sm ">
-									<img class="img-responsive zoom lazy col-md-8" data-original="img/article/pinchat99.jpg">
-									<figcaption class="f-font1 f-aside f-gray-medium f-aa col-md-4">Entrée du Cycle d'orientation de Pinchat.<br>— Photo: Eddy Mottaz</figcaption>
-								</figure>
-								<div class="spacer-xl"></div>
-							</div>
-						</div>
-
-
-						<p class="f-h6 f-font1 f-inter">Des classes infernales</p>
-
-
-						<p>
-							 Dans la 1011 CT, «les élèves lançaient aux profs des remarques du style: «Allez vous faire foutre. J’en ai rien à cirer»,
-							raconte une personne qui connaît la situation.
-						</p>
-
-						<!-- PICTURE aside (doit marcher avec un autre contenu.) -->
-						<div class="box-aside col-md-4" style="color:red; display: inline; overflow: auto;">
-							<figure>
-								<!-- <canvas id="myChart3"></canvas> -->
-								<figcaption class="f-font1 f-aside f-gray-medium f-aa"><b class="f-gray-dark">Evolution du nombre d'actes de violence enregistrés dans les écoles genevoises</b><br>Source: rapport SIGNA 2016-2017</figcaption>
-								<div class="spacer-xl"></div>
-								<canvas id="myChart"></canvas>
-								{# <div class="spacer-xl"></div> #}
-								{# <figcaption class="f-font1 f-aside f-gray-medium f-aa">Source: rapport SIGNA 2016-2017</figcaption> #}
-							</figure>
-						</div>
-
-						
-						<p>
-							 L’essentiel des troubles est attribué à un noyau dur de filles en colère, qui ont cumulé les sanctions – jusqu’à 10 jours
-							d’exclusion du cycle. Le jour même de la dissolution de la classe, trois élèves se sont fait expulser du cours. Dès la première
-							heure, face à un prof remplaçant, l’une des «meneuses» avait refusé de travailler en déclarant simplement: «J’ai pas envie.»
-						</p>
-						
-
-						<p>
-							 «Mes collègues qui s’occupaient de cette classe revenaient épuisés, raconte Juliane Bourgeois, une professeure de français
-							et d’histoire à Pinchat. Pendant 45 minutes, les élèves parlent, ne vous écoutent pas, ne s’asseyent pas, crient.»
-						</p>
-
-						<p>
-							 Après une énième journée d’avanies, les profs ont voulu créer un choc psychologique en dispersant la classe. L’action est,
-							paraît-il, sans précédent. Mais elle a provoqué peu de réactions parmi les autres enseignants de Pinchat.
-						</p>
-
-						<p>
-							 «On n'en a pas tellement parlé entre nous, confie l’un d’eux. On est tellement confrontés à ça que ça ne nous sort pas de
-							notre quotidien.»
-						</p>
-
-						<p class="f-h6 f-font1 f-inter">Le piège des niveaux</p>
-
-						
-						
-						<p>
-							 A Genève, le cycle d’orientation, école obligatoire pour les 12-15 ans, est divisé en trois «regroupements», du plus faible
-							au plus fort: R1, R2 et R3. Ces niveaux deviennent ensuite CT (communication et technologie), LC (langues vivantes et communication)
-							et LS (littéraire et scientifique). Mais la réalité scolaire reste la même: les élèves les plus faibles vont en R1 puis en
-							CT, les meilleurs en R3 puis en LS.
-						</p>
-
-						<!-- PICTURE aside (doit marcher avec un autre contenu.) -->
-						<div class="box-aside col-md-4" style="color:red; display: inline; overflow: auto;">
-							<figure>
-								<img class="zoom lazy" data-original="img/article/nadege-salzmann-2.jpg">
-								<div class="spacer-xl"></div>
-								<figcaption class="f-font1 f-aside f-gray-medium f-aa">Nadège Salzmann Hirsch, membre des femmes PLR genevoises et professeur à Pinchat.<br>— Photo: Eddy Mottaz</figcaption>
-							</figure>
-						</div>
-						
-						<p>
-							 A Pinchat, sur 636 élèves en mars 2018, on ne compte qu’une quarantaine d’élèves de R1/CT. Soit quatre classes seulement,
-							en comptant celle qui a été dissoute en janvier. Mais elles concentrent les difficultés.
-						</p>
-
-						<p>
-							 «Ce sont effectivement des classes très difficiles, où l’on n’a plus beaucoup l’occasion de réellement enseigner, constate
-							Nadège Salzmann Hirsch, membre des femmes PLR genevoises et professeure à Pinchat. On passe souvent l’heure à faire de la
-							discipline, à tenter de gérer. On a parfois l’impression que c’est simplement mieux qu’ils soient là que dans la rue, c’est
-							le seul sens que l’on trouve.»
-						</p>
-						
-						
-						<p>
-							 Le syndrome qui affecte les R1/CT tient en quelques mots: «Difficultés d’apprentissage, démotivation, ce qui se traduit
-							par le dénigrement du prof, déficit d’attention, agressivité et insolence, manque total d’implication – ils ne sont juste
-							pas là», décrit Christine Agassis Zink, une spécialiste des chevaux qui aide des enseignants de ces classes turbulentes.
-						</p>
-
-						
-						
-						<p>
-							 Avant 2011, le cycle genevois ne connaissait que deux niveaux. La nouvelle organisation, avec ses trois strates, a accentué
-							les problèmes de discipline, en créant des classes chimiquement pures d’élèves en difficulté.
-						</p>
-
-						<!-- PICTURE double -->
-						<div class="box-double">
-							<div class="row">
-								<div class="spacer-sm"></div>
-								<figure class="figure-lg col-md-6">
-									<img class="img-responsive zoom lazy" data-original="img/article/pinchat12.jpg">
-									
-								</figure>
-								<figure class="figure-lg col-md-6">
-									<img class="img-responsive zoom lazy" data-original="img/article/pinchat10.jpg">
-									
-								</figure>
-								<div class="spacer-xl"></div>
-							</div>
-						</div>
-						
-						<p>
-							 «Quand il y a trois étages, vous êtes à la cave, vous n’êtes plus seulement au rez», estime Salima Moyard, coprésidente
-							du syndicat des enseignants du cycle. «Ces élèves ont une image extrêmement dégradée d’eux-mêmes. Ils disent: on est nuls,
-							on n'est que des R1, on n'arrivera à rien. Du coup, faire passer un contenu est un vrai défi.»
-						</p>
-
-						
-
-						<p class="f-h6 f-font1 f-inter">20 à 45 minutes de discipline</p>
-
-						
-						
-						<p>
-							 A Pinchat, les cours débutent par un rituel. Dans la classe, les élèves se mettent debout derrière leur pupitre, veste posée,
-							en silence, pour saluer leur prof. Cette simple séquence peut durer 15 secondes – ou tourner au calvaire. Tenter d'obtenir
-							le calme prend alors 15, 20, voire 45 minutes, jusqu'à engloutir l'entier du cours.
-						</p>
-
-						<!-- PICTURE normal -->
-						<div class="box-full col-md-12 scene-stepped scene-stepped-3">
-							<div class="row">
-								<div class="spacer-sm"></div>
-								<figure class="figure-sm scene-stepped--figure">
-									<img src="img/article/kalonji-travailler-kid.png" alt="" class="anim-img1 col-md-8">
-									<img src="img/article/kalonji-travailler-txt.png" alt="" class="anim-img2 col-md-8">
-									<figcaption class="f-font1 f-aside f-gray-medium f-aa col-md-4">Elève d'une classe de Pinchat qui a fini par être dissoute, car il était impossible d’y enseigner.<br>— Dessin: Kalonji</figcaption>
-								</figure>
-								<div class="spacer-xl"></div>
-							</div>
-						</div>
-
-						
-
-						<p>
-							 «D’abord, il faut qu’ils sortent leurs affaires, détaille Nadège Salzmann Hirsch. Il faut parfois dire à chacun individuellement:
-							«S’il te plaît, sors tes affaires», en l’appelant par son prénom. Ensuite, il y en a un qui s’assied parce qu’il en a marre,
-							un autre qui ouvre la fenêtre, un qui relance les conversations… Et quand enfin on dit «Bonjour, asseyez-vous, sortez vos
-							dossiers», ça relance le bruit.»
-						</p>
-						
-						<p>
-							 «Pour leur faire enlever leur veste, il faut négocier, ajoute une autre enseignante. Les élèves essaient de discuter: «Je
-							vais avoir froid si je l’enlève.» Et pendant que tu veux recadrer ça, les autres commencent à manger, ils ont les poches
-							pleines de bonbons, de chips.»
-
-							
-						</p>
-
-						<!-- PICTURE normal -->
-						<div class="box-full col-md-12">
-							<div class="row">
-								<div class="spacer-sm"></div>
-								<figure class="figure-sm ">
-									<img class="img-responsive zoom lazy col-md-8" data-original="img/article/pinchat31.jpg">
-									<figcaption class="f-font1 f-aside f-gray-medium f-aa col-md-4">— Photo: Eddy Mottaz</figcaption>
-								</figure>
-								<div class="spacer-xl"></div>
-							</div>
-						</div>
-
-						
-
-						<p>
-							 La situation de Pinchat n’a rien d’exceptionnel. Les autres cycles genevois connaissent peu ou prou les mêmes problèmes.
-							Et ils se retrouvent dans le reste de la Suisse romande, même si c’est à un degré moindre.
-						</p>
-
-						<p>
-							 «J’interviens dans tous les cantons romands et je constate qu’il y a des situations difficiles un peu partout, aussi bien
-							dans les classes primaires que secondaires, à Fribourg, Neuchâtel, en Valais, dans le Jura», constate Jean-Claude Richoz*,
-							un coach spécialisé qui a travaillé à Pinchat pour recadrer la classe 1011 CT.
-						</p>
-
-						<p>
-							 «Dans certains établissements secondaires urbains, comme à Genève ou à Lausanne, c’est parfois plus extrême et il devient
-							difficile d’enseigner. Certains élèves très peu scolaires, ou qui ont eu un parcours compliqué, posent des problèmes difficiles
-							à résoudre.»
-						</p>
-
-						<p class="f-gray-medium">
-							* Auteur du livre
-							<a href="http://www.jcrichoz.ch/" target="_blank"><i>Gestion de classes et d'élèves difficiles</i></a>, Lausanne, Favre, 2015.
-						</p>
-						
-						<p class="f-h6 f-font1 f-inter">Familles désintégrées</p>
-						
-						<p>
-							 Derrière ces classes ingérables se cachent parfois des situations sociales très dures. «J’ai vu des élèves venir en classe
-							avec des bleus, témoigne une enseignante, d’autres qui s’occupent de trois, quatre ou cinq frères et sœurs en bas âge, j’ai
-							même eu un élève qui amenait ses affaires dans un carton.»
-						</p>
-
-						<p>
-							 L’éclatement de la cellule familiale joue souvent un rôle clé. Exemple parmi d’autres à Pinchat: un élève en mauvais termes
-							avec sa mère, dont le père est absent, qui vit chez sa grand-mère et présente une agitation anormale, se levant sans cesse
-							et perturbant la classe avec de petits bruits.
-						</p>
-
-					
-
-						
-
-						<!-- PICTURE normal -->
-						<div class="box-full col-md-12 scene-stepped scene-stepped-2">
-							<div class="row">
-								<div class="spacer-sm"></div>
-								<figure class="figure-sm scene-stepped--figure">
-									<img src="img/article/kalonji-enfant-txt.png" alt="" class="anim-img1 col-md-8">
-									<img src="img/article/kalonji-enfant-prof.png" alt="" class="anim-img2 col-md-8">
-									<figcaption class="f-font1 f-aside f-gray-medium f-aa col-md-4">Insulte personnelle adressée par un élève à une prof fragilisée.
-									<br>— Dessin: Kalonji</figcaption>
-								</figure>
-								<div class="spacer-xl"></div>
-							</div>
-						</div>
-						
-					
-						
-						<p>
-							 «Ce que je vois le plus en ce moment, ce sont des familles monoparentales, où le parent doit trouver un travail très vite
-							suite à une séparation, constate le directeur de Pinchat, Alain Basset. Beaucoup de familles cumulent plusieurs boulots,
-							par exemple un temps partiel mal rémunéré, plus un autre le soir pour faire bouillir la marmite.»
-						</p>
-
-						
-						<!-- PICTURE normal -->
-						<div class="box-full col-md-12">
-							<div class="row">
-								<div class="spacer-sm"></div>
-								<figure class="figure-sm ">
-									<img class="img-responsive zoom lazy col-md-8" data-original="img/article/pinchat86.jpg">
-									<figcaption class="f-font1 f-aside f-gray-medium f-aa col-md-4">— Photo: Eddy Mottaz</figcaption>
-								</figure>
-								<div class="spacer-xl"></div>
-							</div>
-						</div>
-						
-						
-						<p>
-							 A Pinchat, beaucoup d’élèves de R1/CT sont d’origine étrangère: Portugal, Espagne, Amérique du Sud, Kosovo, Balkans, voire
-							pays arabes… Leurs parents parlent parfois mal français et ne peuvent pas aider pour les devoirs – une proportion de dix
-							devoirs non faits sur douze n’est pas exceptionnelle.
-						</p>
-
-						<p>
-							 Même assister aux réunions de parents d’élèves est un défi pour eux, «surtout parce qu’ils travaillent le soir et n’osent
-							pas en parler à leur patron, explique Alain Basset. Ça concerne par exemple les agents de sécurité ou de nettoyage, les concierges,
-							les personnes qui travaillent à l’aéroport ou même dans les magasins.»
-						</p>
-
-						
-						
-						<p class="f-h6 f-font1 f-inter">Géographie d'une crise</p>
-						
-						<p>
-							 Pourtant, Pinchat n’est pas une école pour défavorisés. Perché au rebord d’une falaise qui domine Carouge, le complexe scolaire
-							se situe à la frontière de deux mondes. Sur le plateau, des quartiers de villas à l’ambiance presque campagnarde. En bas,
-							une périphérie de cités HLM dont certaines sont plutôt délabrées.
-						</p>
-						
-						
-						
-						<p>
-							 «On peut dire qu’une bonne partie des élèves de R1/CT viennent du bas, et qu’ils doivent monter leur chemin de calvaire
-							jusqu’au cycle, résume Jean-Michel Bugnion, directeur de Pinchat ad interim en 2012 et candidat PDC au Grand Conseil. C’est
-							sur ce chemin qu’une partie des tensions, des frustrations s’exprime.»
-						</p>
-
-						<!-- PICTURE full -->
-						<div class="box-full col-md-12">
-							<div class="row">
-								<div class="spacer-sm"></div>
-								<figure class="figure-lg">
-									<iframe src="https://www.google.com/maps/d/embed?mid=1TmQSB0qYXFW8bM6_4S4E50-71LB4EJch" class="google-map"></iframe>
-									<div class="row">
-										{# <figcaption class="f-font1 f-aside f-gray-medium f-aa col-md-4">
-											<div class="spacer-xl"></div>
-											Configuration du site de Pinchat.
-										</figcaption> #}
-									</div>
-								</figure>
-								<div class="spacer-xl"></div>
-							</div>
-						</div>
-						
-						<p>
-							 Tôt le matin, et en fin d’après-midi, des flots d’élèves montent et redescendent le chemin des Moraines par petits groupes,
-							encapuchonnés, portable en main, avec parfois une enceinte portative crachant du rap. Des exclamations très crues fusent
-							dans le brouhaha:
-						</p>
-
-						<p><i>
-							 — «Ferme ta gueule, en plus déjà tu schlingues»;<br>
-							 — «On s’en bat les couilles»;<br>
-							 — «Nique ta mère»;<br>
-							 — «Putain».
-						</i></p>
-						
-						<p>
-							 Le chemin est connu pour être le lieu où se passent des bagarres. Plus récemment, il est devenu le théâtre d’une coutume
-							brutale. Les élèves dont c’est l’anniversaire se voient barbouillés par surprise de farine et d’œufs jetés par leurs camarades.
-							Une lettre a été adressée aux parents pour interdire cette pratique, sans la faire cesser complètement.
-						</p>
-
-						<p>
-							Pinchat a longtemps eu la réputation d'être un cycle plutôt bourgeois. Mais son statut s'est dégradé: «Pinchat aurait une
-							mauvaise image/réputation avec des bagarres régulières et de la méchanceté», note <a href="pdf/pv_ade_22.05.17.pdf" target="_blank">le procès-verbal de l'assemblée des délégués
-							d'élèves du 22 mai 2017</a>.
-						</p>
-
-						<p>
-							 Sans nier la survenance de bagarres occasionnelles, son directeur, Alain Basset, estime qu’il y a des problèmes plus graves.
-							D’abord le cyberharcèlement, ces insultes et menaces diffusées par les réseaux sociaux, surtout le soir ou la nuit. Ensuite
-							la phobie scolaire: «Des élèves n’arrivent plus à aller à l’école. Certains font le chemin mais repartent aussitôt, en disant
-							qu’ils n’arrivent pas à rester en cours.» Le problème toucherait surtout des élèves en difficulté, notamment ceux de R1/CT.
-						</p>
-
-						
-						
-						<p class="f-h6 f-font1 f-inter">Le rêve brisé d'André Chavanne</p>
-						
-						<p>
-							 La ségrégation scolaire, si lisible aujourd’hui, est aux antipodes des idéaux fondateurs du cycle. Si Pinchat a été placé
-							à la frontière des quartiers et des classes, c’était, à l’origine, pour mieux les brasser – jusqu’à effacer les barrières
-							sociales.
-						</p>
-
-						<!-- PICTURE normal -->
-						<div class="box-full col-md-12 scene-stepped scene-stepped-5 scene-stepped-lg">
-							<div class="row">
-								<div class="spacer-sm"></div>
-								<figure class="figure-sm scene-stepped--figure">
-									<img src="img/article/kalonji-schlingue-kidd.png" alt="" class="anim-img1 col-md-8">
-									<img src="img/article/kalonji-schlingue-kidg.png" alt="" class="anim-img2 col-md-8">
-									<img src="img/article/kalonji-schlingue-txt.png" alt="" class="anim-img3 col-md-8">
-									<figcaption class="f-font1 f-aside f-gray-medium f-aa col-md-4">Propos échangés entre élèves du Cycle de Pinchat.
-										<br>— Dessin: Kalonji</figcaption>
-								</figure>
-								<div class="spacer-xl"></div>
-							</div>
-						</div>
-						
-						<p>
-							 Pinchat a été le second cycle construit à Genève, en 1964-1965, la grande époque d’André Chavanne, conseiller d’Etat qui
-							dirigea l’Instruction publique de 1961 à 1985. «La volonté de Chavanne était la mixité», rappelle Christoph Bollmann, ancien
-							architecte et animateur de radio, qui connaît parfaitement le quartier de Pinchat. «La République voulait niveler les classes
-							sociales. Chavanne était un socialiste et, dans son idée, les milieux aisés et moins aisés devaient se confronter, pour que
-							la ploutocratie ne se perpétue pas à l’école.»
-						</p>
-
-					
-
-						
-
-						
-
-						<p>
-							 André Chavanne rêvait d’un cycle sans niveaux, dit «hétérogène». Il pensait que ce système ouvert finirait par s’imposer.
-							Mais en 2011, après des années de guérilla entre partisans des niveaux et tenants des classes hétérogènes, le peuple genevois
-							a approuvé un compromis: des séparations nettes entre élèves forts, moyens et faibles, comme voulu par la droite, mais avec
-							des passerelles permettant le passage entre les couches, pour amadouer la gauche.
-						</p>
-
-						<!-- PICTURE normal -->
-						<div class="box-full col-md-12">
-							<div class="row">
-								<div class="spacer-sm"></div>
-								<figure class="figure-sm ">
-									<img class="img-responsive zoom lazy col-md-8" data-original="img/article/pinchat76.jpg">
-									<figcaption class="f-font1 f-aside f-gray-medium f-aa col-md-4">— Photo: Eddy Mottaz</figcaption>
-								</figure>
-								<div class="spacer-xl"></div>
-							</div>
-						</div>
-
-						<p>
-							 A Pinchat, huit élèves de R1 ont ainsi pu passer en R2 (le niveau moyen) depuis le début de l’année. Mais ce système hybride
-							est source d’effets pervers, argumente l’ancien directeur Jean-Michel Bugnion: «L’élève de R1 a un sentiment d’échec, mais
-							il peut être rédempté, sauvé. Beaucoup ont une forte attente de passer au niveau supérieur. Une minorité y arrive après trois
-							mois, un an. Et ceux qui restent? Eh bien, ils sont damnés! L’élève se dit alors: «Il faut bien qu’on m’admire d’une façon
-							ou d’une autre puisque à l’école je suis mauvais. Et comment devient-on populaire? En faisant rire, d’abord au détriment
-							des profs.»
-						</p>
-
-						
-
-						<p class="f-h6 f-font1 f-inter">Profs en rupture</p>
-
-						<p>
-							 Le corps enseignant n’a pas été formé pour affronter ces classes rebelles. Ses représentants sont en majorité des universitaires,
-							éloignés des réalités sociales qui nourrissent le mal-être de leurs élèves. Pour beaucoup, le choc est rude, parfois dévastateur.
-						</p>
-
-						<!-- PICTURE normal -->
-						<div class="box-full col-md-12">
-							<div class="row">
-								<div class="spacer-sm"></div>
-								<figure class="figure-sm ">
-									<img class="img-responsive zoom lazy col-md-8" data-original="img/article/pinchat89.jpg">
-									<figcaption class="f-font1 f-aside f-gray-medium f-aa col-md-4">— Photo: Eddy Mottaz</figcaption>
-								</figure>
-								<div class="spacer-xl"></div>
-							</div>
-						</div>
-						
-
-						
-
-						<p>
-							Dans un sondage diffusé en 2017, <a href="http://www.le-ser.ch/actualites/rapport-2017-sur-la-sant%C3%A9-des-enseignants-romands" target="_blank">le Syndicat des enseignants romands</a> faisait état d’un «épuisement professionnel et d’un ras-le-bol toujours plus grands» de ses membres. A Genève, 65,7% des
-							profs répondaient avoir «souvent» ou «très souvent» l’impression de «devoir tenir le coup en période scolaire», à la limite
-							du burn-out.
-						</p>
-
-						<!-- PICTURE aside (doit marcher avec un autre contenu.) -->
-						<div class="box-aside col-md-4" style="color:red; display: inline; overflow: auto;">
-							<figure>
-								<figcaption class="f-font1 f-aside f-gray-medium f-aa"><b class="f-gray-dark">«J'ai l'impression de devoir tenir le coup pendant la période scolaire»</b><br>Source: sondage publié en 2017 par le Syndicat des enseignants romands</figcaption>
-								<div class="spacer-xl"></div>
-								<canvas id="myChart3"></canvas>
-								<div class="spacer-xl"></div>
-
-								
-							</figure>
-						</div>
-
-						<p>
-							 Juliane Bourgeois connaît cette situation. Durant deux ans, à Pinchat, elle a enseigné treize heures par semaine à une classe
-							de 9e R1. Une expérience qui l’a à chaque fois épuisée et forcée à se mettre à l’arrêt durant un mois. «Avec ces classes,
-							on ne peut pas se permettre une seconde de répit, explique-t-elle. Il faut toujours les reconcentrer, les remotiver, les
-							ramener sur le sujet en cours… C’est un peu comme de tourner à fond, en voiture, en première. Si vous faites ça trop longtemps,
-							le moteur explose!»
-						</p>
-
-						<p>
-							 Jean-Claude Richoz, le coach pour classes difficiles, rencontre chaque semaine des profs épuisés et qui n’en peuvent plus
-							nerveusement: «Je travaille dans une école avec un groupe, et tout d’un coup, alors qu’on parle d’une situation de classe,
-							l’enseignant concerné craque et se met à pleurer.»
-						</p>
-
-						<p>
-							 Les classes les plus difficiles exigent un profil d’enseignant particulier. Fort, confiant, prêt à nouer un lien affectif
-							avec ses élèves. Capable, aussi, de garder son calme quand on le provoque, pour éviter «l’escalade symétrique»: l’enseignant
-							demande quelque chose («Pose ton téléphone, s’il te plaît»), l’élève refuse, l’enseignant insiste, l’élève l’injurie («J'te
-							casse la gueule, pauvre conne!»), le ton monte quasiment jusqu’à en venir aux mains.
-						</p>
-
-						
-
-						<p>
-							 Certains arrivent à digérer ces situations, d’autres pas. «Vous avez énormément de profs qui sont à l’aise avec ces classes,
-							mais quand vous n’êtes pas formé, pas volontaire, vous êtes rapidement en difficulté et ça peut être extrêmement fatigant»,
-							commente l’ancien conseiller d’Etat genevois Charles Beer, qui a mis en œuvre la dernière réforme du cycle en 2011.
-						</p>
-
-						<!-- PICTURE normal -->
-						<div class="box-full col-md-12 scene-stepped scene-stepped-1">
-							<div class="row">
-								<div class="spacer-sm"></div>
-								<figure class="figure-sm scene-stepped--figure">
-									<img src="img/article/kalonji-conne-kid.png" alt="" class="anim-img1 col-md-8">
-									<img src="img/article/kalonji-conne-prof.png" alt="" class="anim-img2 col-md-8">
-									<img src="img/article/kalonji-conne-txt.png" alt="" class="anim-img3 col-md-8">
-									<figcaption class="f-font1 f-aside f-gray-medium f-aa col-md-4">Réponse d'une élève à une professeure qui lui demandait de lâcher son téléphone.
-									<br>— Dessin: Kalonji</figcaption>
-								</figure>
-								<div class="spacer-xl"></div>
-							</div>
-						</div>
-
-						
-
-						<p>
-							 Depuis, les réseaux sociaux et les smartphones ont changé le rapport de force au détriment du corps enseignant. Un professeur
-							de Pinchat s’est ainsi retrouvé piégé par ses élèves, qui l’ont provoqué en classe pour l’énerver et filmer en cachette sa
-							réaction. «Ça s’est bien terminé, le film a été effacé et l’élève a été sanctionné», assure toutefois le directeur Alain
-							Basset.
-						</p>
-
-						<p class="f-h6 f-font1 f-inter">Solutions de secours</p>
-
-						
-
-						<p>
-							 Pour aider le personnel, des formations ont été mises en place. Elles se nomment discipline positive, médiation culturelle,
-							dialogue philosophique… A Pinchat, il n’est pas rare qu’une classe turbulente soit encadrée par deux enseignants. Pour réapprendre
-							à «poser le cadre», certains cycles ont recours à des coachs externes.
-						</p>
-
-						<p>
-							 Mais l’offre la plus surprenante, proposée depuis quelques années par le Département genevois de l’instruction publique,
-							s’intitule «Comment ajuster notre posture et trouver la juste distance intérieure face à des classes difficiles grâce à la
-							rencontre avec un cheval».
-						</p>
-
-						<!-- Vidéo thérapie cheval -->
-						<div class="box-full col-md-12">
-							<div class="row">
-								<div class="spacer-sm"></div>
-								<figure class="figure-lg">
-									<div class="video-wrapper">
-										<div class="video-wrapper-flex">
-											<iframe src="https://player.vimeo.com/video/263294567" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen
-											 allowfullscreen></iframe>
-										</div>
-									</div>
-									<div class="row">
-										<figcaption class="f-font1 f-aside f-gray-medium f-aa col-md-4">
-											<div class="spacer-xl"></div>
-											 Christine Agassis Zink, équipédagogue.<br>— Vidéo: Simon Gabioud
-										</figcaption>
-									</div>
-								</figure>
-								<div class="spacer-xl"></div>
-							</div>
-						</div>
-
-						<p>
-							 Apprivoiser des adolescents rebelles en s’initiant au dressage? Christine Agassis Zink, l’équipédagogue qui donne ce cours,
-							explique son approche: «Face à ces classes entraînées par des éléments perturbateurs, on se retrouve comme face un cheval:
-							il est plus fort que vous, imprévisible et potentiellement incontrôlable.»
-						</p>
-
-						<p>
-							 Selon elle, «les profs qui sortent de l’université vivent parfois dans un monde privilégié, préservé de la violence. Ils
-							ont de la difficulté à se faire entendre, à être respectés, à avancer dans le programme. Ils se sentent démunis et impuissants.
-							Ça fait vingt ans que j’accompagne des enseignants, et j’ai pu observer en parallèle l’évolution de l’enfance. Beaucoup de
-							parents sont dans l’incapacité de donner un cadre cohérent.»
-						</p>
-
-						<p>
-							 Face à la démission de certaines familles, la définition traditionnelle du métier d’enseignant – transmettre un savoir –
-							devient obsolète. «Ce dont ces élèves ont besoin, c’est d’éducateurs bienveillants», estime Christine Agassis Zink.
-						</p>
-
-						
-
-						
-
-						<p class="f-h6 f-font1 f-inter">Après le cycle, la voie de garage?</p>
-
-						<p>
-							 Indiscipline, faible niveau scolaire, profs laminés… Ces problèmes ne sont pas sans conséquences pour la suite. A Genève,
-							les élèves les plus faibles du cycle alimentent, quelques années plus tard, le décrochage scolaire.
-						</p>
-
-						<!-- PICTURE aside (doit marcher avec un autre contenu.) -->
-						<div class="box-aside col-md-4" style="color:red; display: inline; overflow: auto;">
-							<figure>
-								<figcaption class="f-font1 f-aside f-gray-medium f-aa"><b class="f-gray-dark">De moins en moins d'apprentissages, de plus en plus d'élèves en transition</b><br>Source: Service de recherche en éducation</figcaption>
-								<div class="spacer-xl"></div>
-								<canvas id="myChart2"></canvas>
-								<div class="spacer-xl"></div>
-								<!-- <canvas id="myChart3"></canvas> -->
-								{# <figcaption class="f-font1 f-aside f-gray-medium f-aa">Source: Service de recherche en éducation.</figcaption> #}
-							</figure>
-						</div>
-
-						<p>
-							 Le phénomène se joue en deux temps. A la sortie du cycle, les élèves les moins bien notés tentent de se diriger vers un
-							apprentissage. Mais ils se heurtent souvent à un mur. Trop jeunes, sans formation pratique, «ils ne correspondent pas aux
-							exigences des entreprises, analyse François Rastoldo, du Service de la recherche en éducation (SRED). Ils sont coincés entre
-							l’école, où ils n’ont pas accès en raison des notes, et les entreprises qui ne veulent pas les embaucher.»
-						</p>
-
-						<p>
-							 A Genève, l’économie tertiarisée laisse peu d’options aux jeunes les moins scolaires. «Pour accéder aux banques, régies,
-							assurances, bonne chance! Le niveau d’exigence a beaucoup augmenté», ajoute François Rastoldo.
-						</p>
-
-						
-
-						<p>
-							 De plus en plus, ces élèves se dirigent donc vers des «boucles de transition»: des classes préparatoires censées les amener
-							vers des formations à leur portée, comme l’Ecole de culture générale (ECG), qui forme notamment aux métiers de la santé,
-							ou le Centre de la transition professionnelle, destiné aux métiers industriels ou manuels.
-						</p>
-
-						
-						
-
-						<p>
-							 Le nombre d’élèves orientés vers ces «boucles» a doublé entre 2000 et 2016, passant de 7% à 15% des adolescents qui sortent
-							du cycle. Mais le taux d’échec des classes préparatoires est très élevé – environ 50%. Résultat: ceux qui sortent sans formation
-							ni place d’apprentissage de cette transition sont des centaines chaque année – quelque 330 en 2013, selon les chiffres du
-							SRED.
-						</p>
-
-						<!-- PICTURE normal -->
-						<div class="box-full col-md-12">
-							<div class="row">
-								<div class="spacer-sm"></div>
-								<figure class="figure-sm ">
-									<img class="img-responsive zoom lazy col-md-8" data-original="img/article/pinchat77.jpg">
-									<figcaption class="f-font1 f-aside f-gray-medium f-aa col-md-4">— Photo: Eddy Mottaz</figcaption>
-								</figure>
-								<div class="spacer-xl"></div>
-							</div>
-						</div>
-
-						
-
-						<p>
-							 Pour l’autre moitié de postulants, ceux qui réussissent à entrer à l’ECG, l’enjeu va être de «se bouger pour trouver une
-							place, pour définir un projet», résume Isabelle Godot, directrice de l’ECG Ella-Maillart, au centre de Genève. «Beaucoup
-							de ces gamins ne voient pas de sens à ce qu’ils font, observe-t-elle. Souvent, ils n’ont pas redoublé, mais le système les
-							a poussés, et ils ont continué leur parcours sans qu’on leur dise: «Stop, ça ne va pas.»
-						</p>
-
-						
-
-						<p class="f-h6 f-font1 f-inter">Vers un autre enseignement</p>
-
-						<p>
-							 Pour mieux cadrer puis orienter ces élèves, il faudrait un enseignement différent. Une formation concrète, plutôt qu’un
-							savoir scolaire au rabais. «Il faudrait s’ouvrir beaucoup plus à des profs orientés vers l’éducation et des projets d’apprentissage»,
-							estime l’ancien conseiller d’Etat Charles Beer. Une évolution pour l’instant impossible: «On n'arrive pas à diversifier,
-							vu les exigences requises. Pourtant, la recherche d’apprentissage devrait être prioritaire en toutes situations.»
-						</p>
-
-						
-						<!-- PICTURE normal -->
-						<div class="box-full col-md-12 scene-stepped scene-stepped-4 scene-stepped-lg">
-							<div class="row">
-								<div class="spacer-sm"></div>
-								<figure class="figure-sm scene-stepped--figure">
-									<img src="img/article/kalonji-obeis-prof.png" alt="" class="anim-img1 col-md-8">
-									<img src="img/article/kalonji-obeis-txt.png" alt="" class="anim-img2 col-md-8">
-									<img src="img/article/kalonji-obeis-kid.png" alt="" class="anim-img3 col-md-8">
-									<figcaption class="f-font1 f-aside f-gray-medium f-aa col-md-4">Un élève de Pinchat à son enseignante, en début d'année.
-									<br>— Dessin: Kalonji</figcaption>
-								</figure>
-								<div class="spacer-xl"></div>
-							</div>
-						</div>
-						
-
-
-						<p>
-							 Avec la dernière réforme du cycle, le temps consacré aux disciplines pratiques – musique, dessin, travaux manuels – a baissé.
-							Les élèves de R1/CT sont bombardés de mathématiques, d’allemand et de français, dans une tentative désespérée de «faire le
-							programme». Alors que selon Jean-Michel Bugnion, il leur faudrait «plus de liberté pour monter des projets, pour responsabiliser
-							ces classes».
-						</p>
-
-						
-
-						<p>
-							Interrogée par <i>Le Temps</i> sur la situation au cycle, l’actuelle ministre genevoise de l’Education, Anne Emery-Torracinta, partage le constat général
-							d’échec en ce qui concerne les élèves les plus faibles. «On est loin du compte en termes d’apprentissage scolaire de base.
-							Et ça, c’est très inquiétant», déclare-t-elle dans un entretien que nous publierons en intégralité ce lundi 9 avril sur notre site
-							et dans notre édition de mardi 10 avril.
-						</p>
-
-						<p>
-							 La magistrate promet de lancer une réforme du cycle – à condition, bien sûr, d’être réélue au Conseil d’Etat, lors de l’élection
-							qui se déroulera les 15 avril et 6 mai.
-						</p>
-
-						
-						
-						
-						
-
-						<p>
-							 Mais même si une réforme est mise en route, elle prendra du temps. Pour changer la loi actuelle, il faudra des débats au
-							Grand Conseil, suivis d’un éventuel référendum. Autant dire des années de travail, avec des chances de succès incertaines.
-						</p>
-
-						<p>
-							 En attendant, les cycles devront gérer leurs classes infernales. Avec, parfois, des signes encourageants. A Pinchat, la
-							classe de 1011 CT est en voie de reformation avec les élèves les mieux disposés. Et même ceux qui sortent des classes les
-							plus faibles peuvent rebondir, assure Isabelle Godot, qui en accueille certains à l’ECG: «Ici, c’est un nouveau départ. Certains
-							ont fait des bêtises au cycle et se disent: «Je vais essayer de faire mieux». Mais ce sont des élèves chouettes. S’il y a
-							un cadre bienveillant autour d’eux, ça fonctionne.»
-						</p>
-
-						<div class="spacer-lg"></div>
-
-						<div class="collapsable is-collapsed">
-							<div class="collapsable--header f-center">
-								<figure class="portrait">
-									<img src="img/article/collapsable1-thumb.jpg">
-								</figure>
-								<span class="f-font1 f-weight400 f-h6 f-flash">
-									 Recettes pour gérer une classe difficile
-								</span>
-								
-								<button type="button" class="btn btn-default btn-lg btn-reveal f-font3 f-weight600 f-aa">Ouvrir</button>
-							</div>
-						
-							<div class="collapsable--content">
-								<div class="interview">
-									<div class="box-aside col-md-4">
-										
-										 
-										<figure>
-											<!-- <img src="img/article/interview2.jpg"> -->
-											<span class="f-h6 f-font1">Recettes pour gérer une classe difficile</span>
-											<!-- <div class="spacer-lg"></div> -->
-											<figcaption class="f-font1 f-aside f-gray-medium f-aa">
-												<span class="f-weight700">Sources:</span>enseignants de Pinchat et de Drize; Jean-Claude Richoz, <i>Gestion de classes et d'élèves difficiles</i>, Lausanne, Favre,
-												2015</figcaption>
-											<div class="spacer-md"></div>
-											<div class="spacer-md"></div>
-											<div class="spacer-md"></div>
-										</figure>
-									</div>
-									<div class="interview-2-columns col-md-8">
-										<span class="f-font1 f-weight700">— Accueillir les élèves à l'entrée de la classe.</span>
-										<div class="spacer-sm"></div>
-										<span class="f-font2">Ces derniers comprennent qu'ils entrent dans un espace protégé.</span>
-								
-										<div class="spacer-md"></div>
-										<span class="f-font1 f-weight700">— Créer des liens affectifs avec les élèves.</span>
-										<div class="spacer-sm"></div>
-										<span class="f-font2">Un simple «bonjour, comment ça va?» en début de journée peut aider.</span>
-								
-										<div class="spacer-md"></div>
-										<span class="f-font1 f-weight700">— Donner tout de suite du travail aux élèves.</span>
-										<div class="spacer-sm"></div>
-										<span class="f-font2">L'idée est de les garder concentrés. Exemple: recopier des phrases écrites au tableau en conjuguant des verbes, dans un silence
-										complet.</span>
-
-										<div class="spacer-md"></div>
-										<span class="f-font1 f-weight700">— Un bruit = une annotation dans le carnet.</span>
-										<div class="spacer-sm"></div>
-										<span class="f-font2">Dès qu'un élève sort du cadre, il est sanctionné.
-										</span>
-
-										<div class="spacer-md"></div>
-										<span class="f-font1 f-weight700">— Former une équipe d'enseignants soudée, avec des règles strictes et uniformes.</span>
-										<div class="spacer-sm"></div>
-										<span class="f-font2">«Le flou, c'est laisser la place au n'importe quoi.»
-										</span>
-
-										<div class="spacer-md"></div>
-										<span class="f-font1 f-weight700">— Mettre deux enseignants par classe à certaines heures.</span>
-
-										<div class="spacer-md"></div>
-										<span class="f-font1 f-weight700">— Engager un coach extérieur.</span>
-										<div class="spacer-sm"></div>
-										<span class="f-font2">Certains retraités très expérimentés, comme le Vaudois Jean-Claude Richoz ou le Français Serge Boimare, peuvent apporter de précieux conseils.
-										</span>
-
-										<div class="spacer-md"></div>
-										<span class="f-font1 f-weight700">— «Remettre en route la machine à penser» (méthode Boimare).</span>
-										<div class="spacer-sm"></div>
-										<span class="f-font2">Les élèves écoutent un texte lu par l'enseignant et doivent le résumer, en tirer des questions existentielles, parfois sous
-										forme de petit dessin.
-										</span>
-
-										
-										
-									</div>
-								</div> 
-						
-							
-						
-							</div>
-						
-							<div class="collapsable--footer f-center">
-								<button type="button" class="btn btn-default btn-lg f-font3 f-weight600 f-aa">Ouvrir</button>
-							</div>
-						</div>
-					
-					</div>
-				</div>
 			</div>
 		</section>
 
-		<section class="prefooter">
-			<div class="container">
+	
 
-				<div class="row">
-					<h3 class="text-center f-font1 f-h3 f-weight100 f-aa">Nos grands formats</h3>
-					<div class="spacer-xl"></div>
-					<div class="col-md-3 col-sm-6">
-						<main>
-							<a href="https://labs.letemps.ch/interactive/2018/longread-avalanches/" target="_blank" class="tilter tilter--2">
-								<figure class="tilter__figure">
-									<img class="tilter__image" src="img/article-card-avalanches.jpg" alt="img03" />
-									<div class="tilter__deco tilter__deco--shine">
-										<div></div>
-									</div>
-									<div class="tilter__deco tilter__deco--overlay"></div>
-									<figcaption class="tilter__caption">
-										<h4 class="tilter__title f-font1 f-h3 f-weight700 f-aa">L’avalanche de leur vie</h4>
-										<!-- <p class="tilter__description">À la frontière entre les Etats-Unis et le Mexique</p> -->
-									</figcaption>
-									<svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
-										<path d="M20.5,20.5h260v375h-260V20.5z" />
-									</svg>
-								</figure>
-							</a>
-						</main>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<main>
-							<a href="https://labs.letemps.ch/interactive/2016/longread-fioul-lourd/" target="_blank" class="tilter tilter--2">
-								<figure class="tilter__figure">
-									<img class="tilter__image" src="img/article-card-fioul-lourd.jpg" alt="img03" />
-									<div class="tilter__deco tilter__deco--shine"><div></div></div>
-									<div class="tilter__deco tilter__deco--overlay"></div>
-									<figcaption class="tilter__caption">
-										<h4 class="tilter__title f-font1 f-h3 f-weight700 f-aa">Fioul&nbsp;lourd</h4>
-										<p class="tilter__description">Le sang impur de la globalisation</p>
-									</figcaption>
-									<svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
-										<path d="M20.5,20.5h260v375h-260V20.5z" />
-									</svg>
-								</figure>
-							</a>
-						</main>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<main>
-							<a href="https://labs.letemps.ch/interactive/2016/shenzhen/" target="_blank" class="tilter tilter--2">
-								<figure class="tilter__figure">
-									<img class="tilter__image" src="img/article-card-shenzen.jpg" alt="img03" />
-									<div class="tilter__deco tilter__deco--shine"><div></div></div>
-									<div class="tilter__deco tilter__deco--overlay"></div>
-									<figcaption class="tilter__caption">
-										<h4 class="tilter__title f-font1 f-h3 f-weight700 f-aa">Shenzhen</h4>
-										<p class="tilter__description">De la fumée des usines aux ateliers d'artistes</p>
-									</figcaption>
-									<svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
-										<path d="M20.5,20.5h260v375h-260V20.5z" />
-									</svg>
-								</figure>
-							</a>
-						</main>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<main>
-							<a href="https://labs.letemps.ch/interactive/2016/longread-horlogerie-japonaise/" target="_blank" class="tilter tilter--2">
-								<figure class="tilter__figure">
-									<img class="tilter__image" src="img/article-card-horlogerie-japonaise.jpg" alt="img03" />
-									<div class="tilter__deco tilter__deco--shine"><div></div></div>
-									<div class="tilter__deco tilter__deco--overlay"></div>
-									<figcaption class="tilter__caption">
-										<h4 class="tilter__title f-font1 f-h3 f-weight700 f-aa">Horlogerie japonaise</h4>
-										<p class="tilter__description">A la conquête du monde</p>
-									</figcaption>
-									<svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
-										<path d="M20.5,20.5h260v375h-260V20.5z" />
-									</svg>
-								</figure>
-							</a>
-						</main>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<main>
-							<a href="https://labs.letemps.ch/interactive/2016/tchernobyl-30-ans/" target="_blank" class="tilter tilter--2">
-								<figure class="tilter__figure">
-									<img class="tilter__image" src="img/article-card-tcherno-30-ans.jpg" alt="img03" />
-									<div class="tilter__deco tilter__deco--shine"><div></div></div>
-									<div class="tilter__deco tilter__deco--overlay"></div>
-									<figcaption class="tilter__caption">
-										<h4 class="tilter__title f-font1 f-h3 f-weight700 f-aa">Voyage au cœur de la zone</h4>
-										<p class="tilter__description">Avec les exilés installés à Tchernobyl</p>
-										<!-- <p class="tilter__description">Comment Adula, le projet de parc national, agite le Tessin et les Grisons</p> -->
-									</figcaption>
-									<svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
-										<path d="M20.5,20.5h260v375h-260V20.5z" />
-									</svg>
-								</figure>
-							</a>
-						</main>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<main>
-							<a href="https://labs.letemps.ch/interactive/2017/longread-epicerie-vrac/" target="_blank" class="tilter tilter--2">
-								<figure class="tilter__figure">
-									<img class="tilter__image" src="img/article-card-epicerie.jpg" alt="img03" />
-									<div class="tilter__deco tilter__deco--shine">
-										<div></div>
-									</div>
-									<div class="tilter__deco tilter__deco--overlay"></div>
-									<figcaption class="tilter__caption">
-										<h4 class="tilter__title f-font1 f-h3 f-weight700 f-aa">Au bonheur du vrac</h4>
-										<!-- <p class="tilter__description">Avec les exilés installés à Tchernobyl</p> -->
-										<!-- <p class="tilter__description">Comment Adula, le projet de parc national, agite le Tessin et les Grisons</p> -->
-									</figcaption>
-									<svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
-										<path d="M20.5,20.5h260v375h-260V20.5z" />
-									</svg>
-								</figure>
-							</a>
-						</main>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<main>
-							<a href="https://labs.letemps.ch/interactive/2016/longread-gothard/" target="_blank" class="tilter tilter--2">
-								<figure class="tilter__figure">
-									<img class="tilter__image" src="img/article-card-gothard.jpg" alt="img03" />
-									<div class="tilter__deco tilter__deco--shine">
-										<div></div>
-									</div>
-									<div class="tilter__deco tilter__deco--overlay"></div>
-									<figcaption class="tilter__caption">
-										<h4 class="tilter__title f-font1 f-h3 f-weight700 f-aa">Les oubliés du Gothard</h4>
-										<!-- <p class="tilter__description">Avec les exilés installés à Tchernobyl</p> -->
-									</figcaption>
-									<svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
-										<path d="M20.5,20.5h260v375h-260V20.5z" />
-									</svg>
-								</figure>
-							</a>
-						</main>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<main>
-							<a href="https://labs.letemps.ch/interactive/2017/bol-dor-mirabaud-epopee-technologique/" target="_blank" class="tilter tilter--2">
-								<figure class="tilter__figure">
-									<img class="tilter__image" src="img/article-card-mirabaud.jpg" alt="img03" />
-									<div class="tilter__deco tilter__deco--shine">
-										<div></div>
-									</div>
-									<div class="tilter__deco tilter__deco--overlay"></div>
-									<figcaption class="tilter__caption">
-										<h4 class="tilter__title f-font1 f-h3 f-weight700 f-aa">Le Bol D’Or</h4>
-										<p class="tilter__description">Une épopée technologique</p>
-										<!-- <p class="tilter__description">Comment Adula, le projet de parc national, agite le Tessin et les Grisons</p> -->
-									</figcaption>
-									<svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
-										<path d="M20.5,20.5h260v375h-260V20.5z" />
-									</svg>
-								</figure>
-							</a>
-						</main>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<main>
-							<a href="https://labs.letemps.ch/interactive/2017/longread-horlogers-robots/" target="_blank" class="tilter tilter--2">
-								<figure class="tilter__figure">
-									<img class="tilter__image" src="img/article-card-robots.jpg" alt="img03" />
-									<div class="tilter__deco tilter__deco--shine">
-										<div></div>
-									</div>
-									<div class="tilter__deco tilter__deco--overlay"></div>
-									<figcaption class="tilter__caption">
-										<h4 class="tilter__title f-font1 f-h3 f-weight700 f-aa">Mon horloger est un robot</h4>
-										<!-- <p class="tilter__description">Avec les exilés installés à Tchernobyl</p> -->
-									</figcaption>
-									<svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
-										<path d="M20.5,20.5h260v375h-260V20.5z" />
-									</svg>
-								</figure>
-							</a>
-						</main>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<main>
-							<a href="https://labs.letemps.ch/interactive/2016/longread-montgomery-st/" target="_blank" class="tilter tilter--2">
-								<figure class="tilter__figure">
-									<img class="tilter__image" src="img/article-card-montgommery.jpg" alt="img03" />
-									<div class="tilter__deco tilter__deco--shine">
-										<div></div>
-									</div>
-									<div class="tilter__deco tilter__deco--overlay"></div>
-									<figcaption class="tilter__caption">
-										<h4 class="tilter__title f-font1 f-h3 f-weight700 f-aa">Montgomery street</h4>
-										<p class="tilter__description">Des millionnaires aux vendeurs de crack</p>
-									</figcaption>
-									<svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
-										<path d="M20.5,20.5h260v375h-260V20.5z" />
-									</svg>
-								</figure>
-							</a>
-						</main>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<main>
-							<a href="https://labs.letemps.ch/interactive/2016/longread-ski-chine/" target="_blank" class="tilter tilter--2">
-								<figure class="tilter__figure">
-									<img class="tilter__image" src="img/article-card-ski.jpg" alt="img03" />
-									<div class="tilter__deco tilter__deco--shine">
-										<div></div>
-									</div>
-									<div class="tilter__deco tilter__deco--overlay"></div>
-									<figcaption class="tilter__caption">
-										<h4 class="tilter__title f-font1 f-h3 f-weight700 f-aa">Quand la Chine skiera</h4>
-										<!-- <p class="tilter__description">Des millionnaires aux vendeurs de crack</p> -->
-									</figcaption>
-									<svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
-										<path d="M20.5,20.5h260v375h-260V20.5z" />
-									</svg>
-								</figure>
-							</a>
-						</main>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<main>
-							<a href="https://labs.letemps.ch/interactive/2017/longread-au-pied-du-mur/" target="_blank" class="tilter tilter--2">
-								<figure class="tilter__figure">
-									<img class="tilter__image" src="img/article-card-mur.jpg" alt="img03" />
-									<div class="tilter__deco tilter__deco--shine">
-										<div></div>
-									</div>
-									<div class="tilter__deco tilter__deco--overlay"></div>
-									<figcaption class="tilter__caption">
-										<h4 class="tilter__title f-font1 f-h3 f-weight700 f-aa">Au pied du mur</h4>
-										<p class="tilter__description">À la frontière entre les Etats-Unis et le Mexique</p>
-									</figcaption>
-									<svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
-										<path d="M20.5,20.5h260v375h-260V20.5z" />
-									</svg>
-								</figure>
-							</a>
-						</main>
-					</div>
-					
+		
+
+		<!-- PETITE IMAGE ENTRE 2 PARAGRAPHES -->
+		<!-- <section class="gallery small">
+			<div class="layout">
+				<img class="zoom lazy" data-original="img/lazy-placeholder.jpg">
+				<div class="caption">
+					<b>LES CLANDESTINS</b> ont souvent subi des situations de violence liées aux narcotrafiquants.
 				</div>
+			</div>
+		</section> -->
+
+		
+
+		<!-- HERO IMAGE ENTRE 2 PARAGRAPHES -->
+		<!-- <section class="gallery hero">
+			<div class="layout"> 
+				<img class="zoom lazy" data-original="img/lazy-placeholder.jpg">
+				<div class="caption">
+					<b>VICENTE PACO</b>, l'agent de la Border Patrol rencontré à Nogales. <i>«Quand je porte l’uniforme, je suis là pour appliquer la loi et servir les Etats-Unis, rien d’autre ne compte.»</i>
+				</div>
+			</div>
+		</section> -->
+
+
+		<!-- HERO IMAGE ENTRE 2 PARAGRAPHES -->
+		<section class="gallery hero">
+			<div class="layout">
+				<img class="zoom lazy" data-original="img/accueil-placeholder.jpg">
+				<!-- <div class="caption">
+					Seiko Astron GPS 
+				</div> -->
 			</div>
 		</section>
 
-		<footer class="f-font1 f-h5 f-white f-weight400 f-aa">
+		
+		<section class="">
 			<div class="container">
+
+				<h3 class="inter-titre title">Une agriculture accro à la chimie</h3>
+
+				<p>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum rem accusantium error deserunt enim ipsam fugit eius, eos nobis deleniti dolore ut quos velit eligendi facere placeat fugiat quod necessitatibus, explicabo reiciendis, perferendis a assumenda cum? Voluptatem voluptatibus iure neque eaque veniam? Quidem quis culpa deleniti ratione rerum facilis porro hic in, laudantium unde! Eligendi veritatis fugit enim? Quasi nulla quibusdam libero eius inventore eaque illum doloremque veritatis recusandae, accusantium adipisci facere fugiat iste temporibus ab delectus dignissimos commodi! Itaque commodi accusamus impedit sit, optio fugit dolore ipsa molestias quae rem dolorem alias quas earum cum, consectetur possimus iure. Quaerat sint quia odit excepturi molestias, perferendis, optio nihil autem unde quibusdam pariatur nobis? Ex consectetur asperiores at incidunt quibusdam porro nisi ratione facere dolorum, aspernatur, deleniti cum? Deleniti ut mollitia, illum fugit asperiores molestiae, iure ducimus nobis a sint id, debitis iste repellendus provident ipsa aliquid. 
+				</p>
+
+				<p>
+					Incidunt eum voluptas, nesciunt numquam optio, eveniet architecto nostrum sequi temporibus similique et vel quia enim impedit? Sit minima voluptates explicabo, neque unde molestias sed, deleniti rem praesentium, nemo ad repellat nihil officia error aut? Quisquam, ipsum veniam natus cupiditate explicabo velit voluptas, debitis cumque nobis molestiae quis quae deleniti corporis, architecto earum. Accusantium est esse recusandae ut, perferendis repudiandae deserunt quos magnam fugit qui quidem explicabo autem amet architecto ratione quisquam necessitatibus eius iusto? Neque laudantium illo eos tempora beatae rem eligendi itaque, consequatur maiores vero laboriosam sint blanditiis dolor reiciendis? Quas voluptatum nihil, doloremque quisquam saepe alias aut ipsam officia itaque? Distinctio rem sequi expedita earum sint optio a ipsum ex vitae blanditiis dolorem, non voluptatem ipsam aspernatur beatae aut, molestiae nam sapiente cumque fugiat laboriosam. 
+				</p>
+
+				<p>
+					Quis dolor, facere alias perspiciatis labore natus quibusdam? Unde labore expedita ducimus, deleniti dolores necessitatibus, recusandae, illo accusantium ipsam doloribus dolorum perferendis sapiente? Voluptates doloremque, tempore sit tenetur animi exercitationem nihil hic commodi doloribus a quidem totam maxime iusto laudantium voluptate cum, mollitia expedita. Officia, tempora molestiae libero autem, vel rerum nam commodi, laborum nulla aliquam impedit repellendus quas numquam cupiditate. Dolorem rerum labore, rem quis voluptate accusantium officia odio doloribus. 
+				</p>
+
+				<p>
+					Qui eos possimus nihil consequuntur, quisquam quos temporibus consectetur nostrum incidunt repudiandae sequi, quas eius vero suscipit eveniet fugit ut rem accusantium praesentium, aliquid inventore? Laboriosam ab qui ut inventore distinctio totam cupiditate. Quasi nisi reprehenderit pariatur necessitatibus commodi debitis nemo temporibus hic aut adipisci labore recusandae possimus totam quis ipsum, aperiam officiis aliquid optio, inventore id dolorum perferendis. Amet, blanditiis facilis dolorem doloribus voluptates fugit dolor animi debitis nesciunt quasi? Sequi quia numquam eaque nam natus accusantium illo fuga voluptatem excepturi recusandae commodi cupiditate consequatur itaque sint officiis suscipit, neque pariatur saepe ab aliquam vero ipsum, velit perferendis qui? 
+				</p>
+
+			</div>
+		</section>
+
+
+		<!-- HERO IMAGE ENTRE 2 PARAGRAPHES -->
+		<section class="gallery hero">
+			<div class="layout">
+				<img class="zoom lazy" data-original="img/accueil-placeholder.jpg">
+				<!-- <div class="caption">
+					Seiko Astron GPS 
+				</div> -->
+			</div>
+		</section>
+
+		
+		<section class="">
+			<div class="container">
+
+				<h3 class="inter-titre title">Une agriculture accro à la chimie</h3>
+
+				<p>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum rem accusantium error deserunt enim ipsam fugit eius, eos nobis deleniti dolore ut quos velit eligendi facere placeat fugiat quod necessitatibus, explicabo reiciendis, perferendis a assumenda cum? Voluptatem voluptatibus iure neque eaque veniam? Quidem quis culpa deleniti ratione rerum facilis porro hic in, laudantium unde! Eligendi veritatis fugit enim? Quasi nulla quibusdam libero eius inventore eaque illum doloremque veritatis recusandae, accusantium adipisci facere fugiat iste temporibus ab delectus dignissimos commodi! Itaque commodi accusamus impedit sit, optio fugit dolore ipsa molestias quae rem dolorem alias quas earum cum, consectetur possimus iure. Quaerat sint quia odit excepturi molestias, perferendis, optio nihil autem unde quibusdam pariatur nobis? Ex consectetur asperiores at incidunt quibusdam porro nisi ratione facere dolorum, aspernatur, deleniti cum? Deleniti ut mollitia, illum fugit asperiores molestiae, iure ducimus nobis a sint id, debitis iste repellendus provident ipsa aliquid. 
+				</p>
+
+				<p>
+					Incidunt eum voluptas, nesciunt numquam optio, eveniet architecto nostrum sequi temporibus similique et vel quia enim impedit? Sit minima voluptates explicabo, neque unde molestias sed, deleniti rem praesentium, nemo ad repellat nihil officia error aut? Quisquam, ipsum veniam natus cupiditate explicabo velit voluptas, debitis cumque nobis molestiae quis quae deleniti corporis, architecto earum. Accusantium est esse recusandae ut, perferendis repudiandae deserunt quos magnam fugit qui quidem explicabo autem amet architecto ratione quisquam necessitatibus eius iusto? Neque laudantium illo eos tempora beatae rem eligendi itaque, consequatur maiores vero laboriosam sint blanditiis dolor reiciendis? Quas voluptatum nihil, doloremque quisquam saepe alias aut ipsam officia itaque? Distinctio rem sequi expedita earum sint optio a ipsum ex vitae blanditiis dolorem, non voluptatem ipsam aspernatur beatae aut, molestiae nam sapiente cumque fugiat laboriosam. 
+				</p>
+
+				<p>
+					Quis dolor, facere alias perspiciatis labore natus quibusdam? Unde labore expedita ducimus, deleniti dolores necessitatibus, recusandae, illo accusantium ipsam doloribus dolorum perferendis sapiente? Voluptates doloremque, tempore sit tenetur animi exercitationem nihil hic commodi doloribus a quidem totam maxime iusto laudantium voluptate cum, mollitia expedita. Officia, tempora molestiae libero autem, vel rerum nam commodi, laborum nulla aliquam impedit repellendus quas numquam cupiditate. Dolorem rerum labore, rem quis voluptate accusantium officia odio doloribus. 
+				</p>
+
+				<p>
+					Qui eos possimus nihil consequuntur, quisquam quos temporibus consectetur nostrum incidunt repudiandae sequi, quas eius vero suscipit eveniet fugit ut rem accusantium praesentium, aliquid inventore? Laboriosam ab qui ut inventore distinctio totam cupiditate. Quasi nisi reprehenderit pariatur necessitatibus commodi debitis nemo temporibus hic aut adipisci labore recusandae possimus totam quis ipsum, aperiam officiis aliquid optio, inventore id dolorum perferendis. Amet, blanditiis facilis dolorem doloribus voluptates fugit dolor animi debitis nesciunt quasi? Sequi quia numquam eaque nam natus accusantium illo fuga voluptatem excepturi recusandae commodi cupiditate consequatur itaque sint officiis suscipit, neque pariatur saepe ab aliquam vero ipsum, velit perferendis qui? 
+				</p>
+
+			</div>
+		</section>
+
+
+		<!-- HERO IMAGE ENTRE 2 PARAGRAPHES -->
+		<section class="gallery hero">
+			<div class="layout">
+				<img class="zoom lazy" data-original="img/accueil-placeholder.jpg">
+				<!-- <div class="caption">
+					Seiko Astron GPS 
+				</div> -->
+			</div>
+		</section>
+
+		
+		<section class="">
+			<div class="container">
+
+				<h3 class="inter-titre title">Une agriculture accro à la chimie</h3>
+
+				<p>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum rem accusantium error deserunt enim ipsam fugit eius, eos nobis deleniti dolore ut quos velit eligendi facere placeat fugiat quod necessitatibus, explicabo reiciendis, perferendis a assumenda cum? Voluptatem voluptatibus iure neque eaque veniam? Quidem quis culpa deleniti ratione rerum facilis porro hic in, laudantium unde! Eligendi veritatis fugit enim? Quasi nulla quibusdam libero eius inventore eaque illum doloremque veritatis recusandae, accusantium adipisci facere fugiat iste temporibus ab delectus dignissimos commodi! Itaque commodi accusamus impedit sit, optio fugit dolore ipsa molestias quae rem dolorem alias quas earum cum, consectetur possimus iure. Quaerat sint quia odit excepturi molestias, perferendis, optio nihil autem unde quibusdam pariatur nobis? Ex consectetur asperiores at incidunt quibusdam porro nisi ratione facere dolorum, aspernatur, deleniti cum? Deleniti ut mollitia, illum fugit asperiores molestiae, iure ducimus nobis a sint id, debitis iste repellendus provident ipsa aliquid. 
+				</p>
+
+				<p>
+					Incidunt eum voluptas, nesciunt numquam optio, eveniet architecto nostrum sequi temporibus similique et vel quia enim impedit? Sit minima voluptates explicabo, neque unde molestias sed, deleniti rem praesentium, nemo ad repellat nihil officia error aut? Quisquam, ipsum veniam natus cupiditate explicabo velit voluptas, debitis cumque nobis molestiae quis quae deleniti corporis, architecto earum. Accusantium est esse recusandae ut, perferendis repudiandae deserunt quos magnam fugit qui quidem explicabo autem amet architecto ratione quisquam necessitatibus eius iusto? Neque laudantium illo eos tempora beatae rem eligendi itaque, consequatur maiores vero laboriosam sint blanditiis dolor reiciendis? Quas voluptatum nihil, doloremque quisquam saepe alias aut ipsam officia itaque? Distinctio rem sequi expedita earum sint optio a ipsum ex vitae blanditiis dolorem, non voluptatem ipsam aspernatur beatae aut, molestiae nam sapiente cumque fugiat laboriosam. 
+				</p>
+
+				<p>
+					Quis dolor, facere alias perspiciatis labore natus quibusdam? Unde labore expedita ducimus, deleniti dolores necessitatibus, recusandae, illo accusantium ipsam doloribus dolorum perferendis sapiente? Voluptates doloremque, tempore sit tenetur animi exercitationem nihil hic commodi doloribus a quidem totam maxime iusto laudantium voluptate cum, mollitia expedita. Officia, tempora molestiae libero autem, vel rerum nam commodi, laborum nulla aliquam impedit repellendus quas numquam cupiditate. Dolorem rerum labore, rem quis voluptate accusantium officia odio doloribus. 
+				</p>
+
+				<p>
+					Qui eos possimus nihil consequuntur, quisquam quos temporibus consectetur nostrum incidunt repudiandae sequi, quas eius vero suscipit eveniet fugit ut rem accusantium praesentium, aliquid inventore? Laboriosam ab qui ut inventore distinctio totam cupiditate. Quasi nisi reprehenderit pariatur necessitatibus commodi debitis nemo temporibus hic aut adipisci labore recusandae possimus totam quis ipsum, aperiam officiis aliquid optio, inventore id dolorum perferendis. Amet, blanditiis facilis dolorem doloribus voluptates fugit dolor animi debitis nesciunt quasi? Sequi quia numquam eaque nam natus accusantium illo fuga voluptatem excepturi recusandae commodi cupiditate consequatur itaque sint officiis suscipit, neque pariatur saepe ab aliquam vero ipsum, velit perferendis qui? 
+				</p>
+
+			</div>
+		</section>
+
+
+		<!-- HERO IMAGE ENTRE 2 PARAGRAPHES -->
+		<section class="gallery hero">
+			<div class="layout">
+				<img class="zoom lazy" data-original="img/accueil-placeholder.jpg">
+				<!-- <div class="caption">
+					Seiko Astron GPS 
+				</div> -->
+			</div>
+		</section>
+
+		
+		<section class="">
+			<div class="container">
+
+				<h3 class="inter-titre title">Une agriculture accro à la chimie</h3>
+
+				<p>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum rem accusantium error deserunt enim ipsam fugit eius, eos nobis deleniti dolore ut quos velit eligendi facere placeat fugiat quod necessitatibus, explicabo reiciendis, perferendis a assumenda cum? Voluptatem voluptatibus iure neque eaque veniam? Quidem quis culpa deleniti ratione rerum facilis porro hic in, laudantium unde! Eligendi veritatis fugit enim? Quasi nulla quibusdam libero eius inventore eaque illum doloremque veritatis recusandae, accusantium adipisci facere fugiat iste temporibus ab delectus dignissimos commodi! Itaque commodi accusamus impedit sit, optio fugit dolore ipsa molestias quae rem dolorem alias quas earum cum, consectetur possimus iure. Quaerat sint quia odit excepturi molestias, perferendis, optio nihil autem unde quibusdam pariatur nobis? Ex consectetur asperiores at incidunt quibusdam porro nisi ratione facere dolorum, aspernatur, deleniti cum? Deleniti ut mollitia, illum fugit asperiores molestiae, iure ducimus nobis a sint id, debitis iste repellendus provident ipsa aliquid. 
+				</p>
+
+				<p>
+					Incidunt eum voluptas, nesciunt numquam optio, eveniet architecto nostrum sequi temporibus similique et vel quia enim impedit? Sit minima voluptates explicabo, neque unde molestias sed, deleniti rem praesentium, nemo ad repellat nihil officia error aut? Quisquam, ipsum veniam natus cupiditate explicabo velit voluptas, debitis cumque nobis molestiae quis quae deleniti corporis, architecto earum. Accusantium est esse recusandae ut, perferendis repudiandae deserunt quos magnam fugit qui quidem explicabo autem amet architecto ratione quisquam necessitatibus eius iusto? Neque laudantium illo eos tempora beatae rem eligendi itaque, consequatur maiores vero laboriosam sint blanditiis dolor reiciendis? Quas voluptatum nihil, doloremque quisquam saepe alias aut ipsam officia itaque? Distinctio rem sequi expedita earum sint optio a ipsum ex vitae blanditiis dolorem, non voluptatem ipsam aspernatur beatae aut, molestiae nam sapiente cumque fugiat laboriosam. 
+				</p>
+
+				<p>
+					Quis dolor, facere alias perspiciatis labore natus quibusdam? Unde labore expedita ducimus, deleniti dolores necessitatibus, recusandae, illo accusantium ipsam doloribus dolorum perferendis sapiente? Voluptates doloremque, tempore sit tenetur animi exercitationem nihil hic commodi doloribus a quidem totam maxime iusto laudantium voluptate cum, mollitia expedita. Officia, tempora molestiae libero autem, vel rerum nam commodi, laborum nulla aliquam impedit repellendus quas numquam cupiditate. Dolorem rerum labore, rem quis voluptate accusantium officia odio doloribus. 
+				</p>
+
+				<p>
+					Qui eos possimus nihil consequuntur, quisquam quos temporibus consectetur nostrum incidunt repudiandae sequi, quas eius vero suscipit eveniet fugit ut rem accusantium praesentium, aliquid inventore? Laboriosam ab qui ut inventore distinctio totam cupiditate. Quasi nisi reprehenderit pariatur necessitatibus commodi debitis nemo temporibus hic aut adipisci labore recusandae possimus totam quis ipsum, aperiam officiis aliquid optio, inventore id dolorum perferendis. Amet, blanditiis facilis dolorem doloribus voluptates fugit dolor animi debitis nesciunt quasi? Sequi quia numquam eaque nam natus accusantium illo fuga voluptatem excepturi recusandae commodi cupiditate consequatur itaque sint officiis suscipit, neque pariatur saepe ab aliquam vero ipsum, velit perferendis qui? 
+				</p>
+
+			</div>
+		</section>
+
+		<!-- HERO IMAGE ENTRE 2 PARAGRAPHES -->
+		<section class="gallery hero">
+			<div class="layout">
+				<img class="zoom lazy" data-original="img/accueil-placeholder.jpg">
+				<!-- <div class="caption">
+					Seiko Astron GPS 
+				</div> -->
+			</div>
+		</section>
+
+		
+		<section class="">
+			<div class="container">
+
+				<h3 class="inter-titre title">Une agriculture accro à la chimie</h3>
+
+				<p>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum rem accusantium error deserunt enim ipsam fugit eius, eos nobis deleniti dolore ut quos velit eligendi facere placeat fugiat quod necessitatibus, explicabo reiciendis, perferendis a assumenda cum? Voluptatem voluptatibus iure neque eaque veniam? Quidem quis culpa deleniti ratione rerum facilis porro hic in, laudantium unde! Eligendi veritatis fugit enim? Quasi nulla quibusdam libero eius inventore eaque illum doloremque veritatis recusandae, accusantium adipisci facere fugiat iste temporibus ab delectus dignissimos commodi! Itaque commodi accusamus impedit sit, optio fugit dolore ipsa molestias quae rem dolorem alias quas earum cum, consectetur possimus iure. Quaerat sint quia odit excepturi molestias, perferendis, optio nihil autem unde quibusdam pariatur nobis? Ex consectetur asperiores at incidunt quibusdam porro nisi ratione facere dolorum, aspernatur, deleniti cum? Deleniti ut mollitia, illum fugit asperiores molestiae, iure ducimus nobis a sint id, debitis iste repellendus provident ipsa aliquid. 
+				</p>
+
+				<p>
+					Incidunt eum voluptas, nesciunt numquam optio, eveniet architecto nostrum sequi temporibus similique et vel quia enim impedit? Sit minima voluptates explicabo, neque unde molestias sed, deleniti rem praesentium, nemo ad repellat nihil officia error aut? Quisquam, ipsum veniam natus cupiditate explicabo velit voluptas, debitis cumque nobis molestiae quis quae deleniti corporis, architecto earum. Accusantium est esse recusandae ut, perferendis repudiandae deserunt quos magnam fugit qui quidem explicabo autem amet architecto ratione quisquam necessitatibus eius iusto? Neque laudantium illo eos tempora beatae rem eligendi itaque, consequatur maiores vero laboriosam sint blanditiis dolor reiciendis? Quas voluptatum nihil, doloremque quisquam saepe alias aut ipsam officia itaque? Distinctio rem sequi expedita earum sint optio a ipsum ex vitae blanditiis dolorem, non voluptatem ipsam aspernatur beatae aut, molestiae nam sapiente cumque fugiat laboriosam. 
+				</p>
+
+				<p>
+					Quis dolor, facere alias perspiciatis labore natus quibusdam? Unde labore expedita ducimus, deleniti dolores necessitatibus, recusandae, illo accusantium ipsam doloribus dolorum perferendis sapiente? Voluptates doloremque, tempore sit tenetur animi exercitationem nihil hic commodi doloribus a quidem totam maxime iusto laudantium voluptate cum, mollitia expedita. Officia, tempora molestiae libero autem, vel rerum nam commodi, laborum nulla aliquam impedit repellendus quas numquam cupiditate. Dolorem rerum labore, rem quis voluptate accusantium officia odio doloribus. 
+				</p>
+
+				<p>
+					Qui eos possimus nihil consequuntur, quisquam quos temporibus consectetur nostrum incidunt repudiandae sequi, quas eius vero suscipit eveniet fugit ut rem accusantium praesentium, aliquid inventore? Laboriosam ab qui ut inventore distinctio totam cupiditate. Quasi nisi reprehenderit pariatur necessitatibus commodi debitis nemo temporibus hic aut adipisci labore recusandae possimus totam quis ipsum, aperiam officiis aliquid optio, inventore id dolorum perferendis. Amet, blanditiis facilis dolorem doloribus voluptates fugit dolor animi debitis nesciunt quasi? Sequi quia numquam eaque nam natus accusantium illo fuga voluptatem excepturi recusandae commodi cupiditate consequatur itaque sint officiis suscipit, neque pariatur saepe ab aliquam vero ipsum, velit perferendis qui? 
+				</p>
+
+			</div>
+		</section>
+
+		
+
+		<!-- HERO IMAGE ENTRE 2 PARAGRAPHES -->
+		<section class="gallery hero">
+			<div class="layout">
+				<img class="zoom lazy" data-original="img/accueil-placeholder.jpg">
+				<!-- <div class="caption">
+					Seiko Astron GPS 
+				</div> -->
+			</div>
+		</section>
+
+		
+		<section class="">
+			<div class="container">
+
+				<h3 class="inter-titre title">Une agriculture accro à la chimie</h3>
+
+				<p>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum rem accusantium error deserunt enim ipsam fugit eius, eos nobis deleniti dolore ut quos velit eligendi facere placeat fugiat quod necessitatibus, explicabo reiciendis, perferendis a assumenda cum? Voluptatem voluptatibus iure neque eaque veniam? Quidem quis culpa deleniti ratione rerum facilis porro hic in, laudantium unde! Eligendi veritatis fugit enim? Quasi nulla quibusdam libero eius inventore eaque illum doloremque veritatis recusandae, accusantium adipisci facere fugiat iste temporibus ab delectus dignissimos commodi! Itaque commodi accusamus impedit sit, optio fugit dolore ipsa molestias quae rem dolorem alias quas earum cum, consectetur possimus iure. Quaerat sint quia odit excepturi molestias, perferendis, optio nihil autem unde quibusdam pariatur nobis? Ex consectetur asperiores at incidunt quibusdam porro nisi ratione facere dolorum, aspernatur, deleniti cum? Deleniti ut mollitia, illum fugit asperiores molestiae, iure ducimus nobis a sint id, debitis iste repellendus provident ipsa aliquid. 
+				</p>
+
+				<p>
+					Incidunt eum voluptas, nesciunt numquam optio, eveniet architecto nostrum sequi temporibus similique et vel quia enim impedit? Sit minima voluptates explicabo, neque unde molestias sed, deleniti rem praesentium, nemo ad repellat nihil officia error aut? Quisquam, ipsum veniam natus cupiditate explicabo velit voluptas, debitis cumque nobis molestiae quis quae deleniti corporis, architecto earum. Accusantium est esse recusandae ut, perferendis repudiandae deserunt quos magnam fugit qui quidem explicabo autem amet architecto ratione quisquam necessitatibus eius iusto? Neque laudantium illo eos tempora beatae rem eligendi itaque, consequatur maiores vero laboriosam sint blanditiis dolor reiciendis? Quas voluptatum nihil, doloremque quisquam saepe alias aut ipsam officia itaque? Distinctio rem sequi expedita earum sint optio a ipsum ex vitae blanditiis dolorem, non voluptatem ipsam aspernatur beatae aut, molestiae nam sapiente cumque fugiat laboriosam. 
+				</p>
+
+				<p>
+					Quis dolor, facere alias perspiciatis labore natus quibusdam? Unde labore expedita ducimus, deleniti dolores necessitatibus, recusandae, illo accusantium ipsam doloribus dolorum perferendis sapiente? Voluptates doloremque, tempore sit tenetur animi exercitationem nihil hic commodi doloribus a quidem totam maxime iusto laudantium voluptate cum, mollitia expedita. Officia, tempora molestiae libero autem, vel rerum nam commodi, laborum nulla aliquam impedit repellendus quas numquam cupiditate. Dolorem rerum labore, rem quis voluptate accusantium officia odio doloribus. 
+				</p>
+
+				<p>
+					Qui eos possimus nihil consequuntur, quisquam quos temporibus consectetur nostrum incidunt repudiandae sequi, quas eius vero suscipit eveniet fugit ut rem accusantium praesentium, aliquid inventore? Laboriosam ab qui ut inventore distinctio totam cupiditate. Quasi nisi reprehenderit pariatur necessitatibus commodi debitis nemo temporibus hic aut adipisci labore recusandae possimus totam quis ipsum, aperiam officiis aliquid optio, inventore id dolorum perferendis. Amet, blanditiis facilis dolorem doloribus voluptates fugit dolor animi debitis nesciunt quasi? Sequi quia numquam eaque nam natus accusantium illo fuga voluptatem excepturi recusandae commodi cupiditate consequatur itaque sint officiis suscipit, neque pariatur saepe ab aliquam vero ipsum, velit perferendis qui? 
+				</p>
+
+			</div>
+		</section>
+
+		
+		
+        
+        
+		
+		<footer>
+			<!-- <hr class="end"> -->
+			<div class="container">
+
+				<h5>Nos grands formats</h5>
+
 				<div class="row">
-					<div class="col-md-3 col-sm-6">
-						<ul class="footer-menu">
-							<a href="https://www.letemps.ch" target="_blank"><img src="img/logo-lt-blanc.svg" alt="" class="footer-logo"></a>
-							<li>&nbsp;</li>
-							<li>&nbsp;</li>
-							<li><a href="https://www.letemps.ch/a-propos" target="blank">À propos</a></li>
-							<li><a href="https://www.letemps.ch/faq" target="blank">FAQ</a></li>
-							<li><a href="https://www.letemps.ch/contact" target="blank">Contacts</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<ul class="footer-menu">
-							<li><a href="http://www.admeira.ch/fr/brands/digital/letemps-ch" target="blank">Publicité</a></li>
-							<li><a href="http://www.letempsarchives.ch/" target="blank">Archives</a></li>
-							<li><a href="https://www.letemps.ch/abonnes/services" target="blank">Services</a></li>
-							<li><a href="https://www.letemps.ch/rss" target="blank">RSS</a></li>
-							<li><a href="https://www.letemps.ch/" target="blank">© 2018 Le Temps SA</a></li>
-						</ul>
-					</div>
-					<div class="col-md-6">
-						
-						<h4 class="f-weight700">Vos newsletters</h4>
-						<h4>Inscrivez-vous et recevez les newsletter de votre choix. <span class="f-weight700"><a href="https://www.letemps.ch/newsletters" target="_blank">Voir la liste</a></span></h4>
-						<div class="spacer-xl"></div>
-						<div class="sharebox sharebox-invert">
-							<a href="https://www.facebook.com/sharer.php?u={{ app.url }}&display=popup&ref=plugin&src=share_button"><i class="fa fa-facebook fa-2x"></i></a>
-							<a href="https://twitter.com/intent/tweet?text={{ twitterDescription ~ ' ' ~ app.url ~ ' '|url_encode }}&via={{ brand }}"><i class="fa fa-twitter fa-2x"></i></a>
-							<a href="https://www.linkedin.com/shareArticle?url={{ app.url }}&mini=true&title={{ title|url_encode }}&summary={{ description|url_encode }}&source={{ 'Le Temps'|url_encode }}"><i class="fa fa-linkedin fa-2x"></i></a>
+					<a href="https://labs.letemps.ch/interactive/2017/bol-dor-mirabaud-epopee-technologique/" target="blank" class="footer__link">
+						<div class="teaser">
+							<div class="teaser-bg" style="background: url('img/thumb-boldor.jpg');"></div>
+							<div class="caption">Le Bol d'Or, une épopée technologique</div>
 						</div>
-					</div>
+					</a>
+
+					<a href="https://labs.letemps.ch/interactive/2016/longread-parc-adula/" target="blank" class="footer__link">
+						<div class="teaser">
+							<div class="teaser-bg" style="background: url('img/thumb_adula.jpg');"></div>
+							<div class="caption">Parc Adula: Bataille dans la montagne</div>
+						</div>
+					</a>
 				</div>
+
 				<div class="row">
-					<div class="credits col-md-12">
-						<div class="spacer-xl"></div>
-						<span class="f-h7 f-gray-medium">Texte: Sylvain Besson</span><br>
-						<span class="f-h7 f-gray-medium">Format web: César Greppin</span><br>
-						<span class="f-h7 f-gray-medium">Photos: Eddy Mottaz</span><br>
-						<span class="f-h7 f-gray-medium">Iconographie: Catherine Rüttimann</span><br>
-						<span class="f-h7 f-gray-medium">Illustrations: Kalondji</span><br>
-						<span class="f-h7 f-gray-medium">Montage vidéo: Simon Gabioud</span>
-					</div>
+				<a href="https://labs.letemps.ch/interactive/2016/longread-fioul-lourd/" target="blank" class="footer__link">
+						<div class="teaser">
+							<div class="teaser-bg" style="background: url('img/thumb_fioul.jpg');"></div>
+							<div class="caption">Fioul lourd, le sang impur de la globalisation</div>
+						</div>
+					</a>
+
+					<a href="https://labs.hebdo.ch/interactive/2016/longread-horlogerie-japonaise/" target="blank" class="footer__link">
+						<div class="teaser">
+							<div class="teaser-bg" style="background: url('img/thumb-horlogerie-japonaise.jpg');"></div>
+							<div class="caption">Horlogerie japonaise – A la conquête du monde</div>
+						</div>
+					</a>
 				</div>
+
+				<div class="row">
+					<a href="https://labs.letemps.ch/interactive/2016/longread-gothard/" target="blank" class="footer__link">
+						<div class="teaser">
+							<div class="teaser-bg" style="background: url('img/thumb_gothard.jpg');"></div>
+							<div class="caption">Les oubliés du Gothard</div>
+						</div>
+					</a>
+					<a href="https://labs.letemps.ch/interactive/2016/tchernobyl-30-ans/" target="blank" class="footer__link">
+						<div class="teaser">
+							<div class="teaser-bg" style="background: url('img/thumb-tchernobyl.jpg');"></div>
+							<div class="caption">30 ans après, voyage au cœur de la zone </div>
+						</div>
+					</a>
+				</div>
+
+				<div class="row">
+					<a href="https://labs.letemps.ch/interactive/2016/shenzhen/" target="blank" class="footer__link">
+						<div class="teaser">
+							<div class="teaser-bg" style="background: url('img/thumb_shenzhen.jpg');"></div>
+							<div class="caption">Shenzhen, de la fumée des usines aux ateliers d'artistes</div>
+						</div>
+					</a>
+					<a href="https://labs.letemps.ch/interactive/2016/montre-suisse/" target="blank" class="footer__link">
+						<div class="teaser">
+							<div class="teaser-bg" style="background: url('img/thumb-montre.jpg');"></div>
+							<div class="caption">Comment j'ai fabriqué ma montre en 8 heures</div>
+						</div>
+					</a>
+					
+				</div>
+
+			</div>
+
+			<div class="credits">
+				Texte: Pascaline Minet<br>
+				Illustrations: Florent Collioud et César Greppin<br>
+				Iconographie: Catherine Rüttimann<br>
+				Vidéos: Arnaud Mathier<br>
+				Webdesign et animation: César Greppin
 			</div>
 		</footer>
-
-
+		
 		{{ block('footer_brand') }}
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/lazyload.js"></script>
-        <script src="js/main.js"></script>
-		<script src="js/header.js"></script>
-		<script src="js/anim-blocks.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.js"></script>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.4/SmoothScroll.min.js"></script> -->
-		<script src="js/jquery.fitvids.js"></script>
-		
-        <!-- tilt dependencies -->
-        <script src="js/tilt.js"></script>
-        <script src="js/imagesloaded.pkgd.min.js"></script> 
-		<script src="js/anime.min.js"></script>
-
-		<script src="js/zoom.js"></script>
+        <script src="js/jquery.lazyload.js?v=1.9.7"></script>
+        <script src="js/intro-control.js"></script>
 		<script src="js/viewport.js"></script>
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-
-
-        <script>
-			(function() {
-				var tiltSettings = [
-				{},
-				{
-					movement: {
-						imgWrapper : {
-							translation : {x: 0, y: 0, z: 0},
-							rotation : {x: -5, y: 5, z: 0},
-							reverseAnimation : {
-								duration : 1200,
-								easing : 'easeOutElastic',
-								elasticity : 600
-							}
-						},
-						lines : {
-							translation : {x: 10, y: 10, z: [0,10]},
-							reverseAnimation : {
-								duration : 1000,
-								easing : 'easeOutExpo',
-								elasticity : 600
-							}
-						},
-						caption : {
-							translation : {x: 20, y: 20, z: 0},
-							rotation : {x: 0, y: 0, z: 0},
-							reverseAnimation : {
-								duration : 1500,
-								easing : 'easeOutElastic',
-								elasticity : 600
-							}
-						},
-						/*
-						overlay : {
-							translation : {x: 10, y: 10, z: [0,50]},
-							reverseAnimation : {
-								duration : 500,
-								easing : 'easeOutExpo'
-							}
-						},
-						*/
-						shine : {
-							translation : {x: 50, y: 50, z: 0},
-							reverseAnimation : {
-								duration : 1200,
-								easing : 'easeOutElastic',
-								elasticity: 600
-							}
-						}
-					}
-				
-				
-				}];
-				function init() {
-					var idx = 0;
-					[].slice.call(document.querySelectorAll('a.tilter')).forEach(function(el, pos) { 
-						idx = pos%2 === 0 ? idx+1 : idx;
-						new TiltFx(el, tiltSettings[idx-1]);
-					});
-				}
-				// Preload all images.
-				imagesLoaded(document.querySelector('main'), function() {
-					document.body.classList.remove('loading');
-					init();
-				});
-				// REMOVE THIS!
-				// For Demo purposes only. Prevent the click event.
-				[].slice.call(document.querySelectorAll('a[href="#"]')).forEach(function(el) {
-					el.addEventListener('click', function(ev) { ev.preventDefault(); });
-				});
-				var pater = document.querySelector('.pater'),
-					paterSVG = pater.querySelector('.pater__svg'),
-					pathEl = paterSVG.querySelector('path'),
-					paths = {default: pathEl.getAttribute('d'), active: paterSVG.getAttribute('data-path-hover')};
-				pater.addEventListener('mouseenter', function() {
-					anime.remove(pathEl);
-					anime({
-						targets: pathEl,
-						d: paths.active,
-						duration: 400,
-						easing: 'easeOutQuad'
-					});
-				});
-				pater.addEventListener('mouseleave', function() {
-					anime.remove(pathEl);
-					anime({
-						targets: pathEl,
-						d: paths.default,
-						duration: 400,
-						easing: 'easeOutExpo'
-					});
-				});
-			})();
-		</script>
+        <!--<script src="js/timeline-control.js"></script>-->
+        <script src="js/owl.carousel.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/timeline.js"></script>
+        <!--<script src="js/video-control.js"></script>-->
+        <!--<script src="js/map-anim.js"></script>-->
+		<!--<script src="js/hero-control.js"></script>-->
+		<script src="js/animation-pesticides.js"></script>
+		<script src="js/animation-charts.js"></script>
+        <script src="js/zoom.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.4/SmoothScroll.min.js"></script>
 	</body>
-	
 </html>

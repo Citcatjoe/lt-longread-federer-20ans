@@ -3,20 +3,21 @@
 //=====================================================================//
 // MIXINS
 //=====================================================================//
-@import "bourbon/bourbon"; /*Bourbon mixins*/        
+@import "bourbon/bourbon"; /*Bourbon mixins*/          
 
 //=====================================================================//
 // RESET
+//=====================================================================// 
+// @import url("reset.css"); /*PROCOM reset styles*/ included in LT navbar 
+@import "barbarian_reset"; /*Boxes settings*/             
+ 
 //=====================================================================//
-// @import url("reset.css"); /*PROCOM reset styles*/ included in LT navbar
-@import "barbarian_reset"; /*Boxes settings*/         
-
+// USEFULL STUFF  
 //=====================================================================//
-// USEFULL STUFF
-//=====================================================================//
-@import "base"; /*Colors, breakpoints...*/ 
-@import "typography"; /*text relatives*/ 
-@import "helpers"; /*/HTML5 Boilerplate) Clearfix, hidden, visuallyhidden, invisible...*/   
+@import "base"; /*Colors, fonts, z-index, breakpoints...*/
+//@import "typography";
+@import "helpers"; /*/HTML5 Boilerplate) Clearfix, hidden, visuallyhidden, invisible...*/ 
+@import "map-anim";   
 
 //=====================================================================//
 // GENERAL LAYOUT
@@ -27,13 +28,12 @@
 // ELEMENTS
 //=====================================================================//
 @import "elements"; /*Buttons, dropdown...*/
-@import "gallery"; /*Galleries*/ 
-@import "tilt"; /*Galleries*/ 
+@import "timeline"; 
 
 //=====================================================================//
 // FIX
 //=====================================================================//
-@import "shame";
+@import "shame"; 
 
 
 

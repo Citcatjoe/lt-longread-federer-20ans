@@ -1516,6 +1516,17 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/img\/article\/68979-200.png": {
+		"ft": 32768,
+		"iS": 4178,
+		"oA": 0,
+		"oAP": "\/img\/article\/68979-200.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/img\/article\/avec-carter.jpg": {
 		"ft": 16384,
 		"iS": 46256,
@@ -1639,7 +1650,7 @@
 		},
 	"\/img\/article\/headerend.jpg": {
 		"ft": 16384,
-		"iS": 3128842,
+		"iS": 6803062,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/article\/headerend.jpg",
@@ -1665,6 +1676,17 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/article\/mariage.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/article\/mountain-icon-outline-vector-logo-illustration-filled-color-linear-pictogram-isolated-white-95163122.jpg": {
+		"ft": 16384,
+		"iS": 18648,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/img\/article\/mountain-icon-outline-vector-logo-illustration-filled-color-linear-pictogram-isolated-white-95163122.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -1725,7 +1747,7 @@
 		"opt": 0,
 		"q": 100
 		},
-	"\/img\/article\/team.JPG": {
+	"\/img\/article\/team.jpg": {
 		"ft": 16384,
 		"iS": 383457,
 		"jF": 0,
@@ -1736,7 +1758,7 @@
 		"opt": 1,
 		"q": 100
 		},
-	"\/img\/article\/vs-arnold.JPG": {
+	"\/img\/article\/vs-arnold.jpg": {
 		"ft": 16384,
 		"iS": 447636,
 		"jF": 0,
